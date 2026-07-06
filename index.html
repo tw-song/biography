@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tae's Portfolio</title>
+    <script>
+        (function () {
+            var loc = window.location;
+            var base = document.createElement('base');
+
+            function applyTheme() {
+                var storedTheme = null;
+                try { storedTheme = localStorage.getItem('theme-preference'); } catch (e) {}
+                var systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                if (storedTheme === 'dark' || (storedTheme !== 'light' && systemDark)) {
+                    document.documentElement.classList.add('system-dark-mode');
+                    document.documentElement.style.colorScheme = 'dark';
+                } else {
+                    document.documentElement.style.colorScheme = 'light';
+                }
+            }
+
+            if (loc.protocol === 'file:') {
+                base.href = loc.href.slice(0, loc.href.lastIndexOf('/') + 1);
+                document.head.appendChild(base);
+                applyTheme();
+                return;
+            }
+
+            var path = loc.pathname;
+            var lastSegment = path.split('/').pop() || '';
+            if (!lastSegment.includes('.') && !path.endsWith('/')) {
+                loc.replace(path + '/' + loc.search + loc.hash);
+                return;
+            }
+
+            base.href = path.endsWith('/') ? path : path.slice(0, path.lastIndexOf('/') + 1);
+            document.head.appendChild(base);
+            applyTheme();
+        })();
+    </script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <div class="menu-bar-brand-wrap">
+            <button type="button" class="menu-bar-brand" id="brandMenuBtn" aria-haspopup="true" aria-expanded="false" aria-controls="brandMenu">
+                <svg class="menu-bar-doc-icon" viewBox="0 0 16 16" aria-hidden="true">
+                    <path fill="#ffffff" stroke="rgba(0, 0, 0, 0.18)" stroke-width="0.75" d="M2.5 1h6.793L13.5 4.707V14a1 1 0 0 1-1 1H2.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1z"/>
+                    <path fill="rgba(0, 0, 0, 0.05)" stroke="rgba(0, 0, 0, 0.18)" stroke-width="0.75" d="M9.293 1H9.5v3.5H13.5"/>
+                    <path fill="none" stroke="rgba(0, 0, 0, 0.15)" stroke-width="0.75" stroke-linecap="round" d="M4.5 7h7M4.5 9.25h7M4.5 11.5h4.5"/>
+                </svg>
+                <span class="menu-bar-title" data-content="site-title">Tae's Portfolio</span>
+            </button>
+            <div class="brand-menu" id="brandMenu" hidden role="menu" aria-label="Site information">
+                <ul class="brand-menu-list" data-content="brand-dates"></ul>
+            </div>
+        </div>
+        <a href="#home" data-page="home" class="active">Home</a>
+        <a href="#about" data-page="about">About</a>
+        <a href="#timeline" data-page="timeline">Timeline</a>
+        <a href="#experience" data-page="experience">Experience</a>
+        <a href="#connect" data-page="connect">Connect</a>
+
+        <div class="music-player">
+            <span class="music-title" id="musicTitle">
+                <span class="music-title-track">
+                    <span class="music-title-copy">Porter Robinson - Lifelike (Official Audio)</span>
+                    <span class="music-title-copy" aria-hidden="true">Porter Robinson - Lifelike (Official Audio)</span>
+                </span>
+            </span>
+            <img src="misc/nav/audio-cover.jpg" alt="Porter Robinson - Lifelike cover" class="music-cover" width="24" height="24">
+            <a href="https://youtu.be/ijmUdI_c-fk?si=U2_dOmO92Yh82moR" class="music-link" target="_blank" rel="noopener noreferrer" aria-label="Open Porter Robinson - Lifelike (Official Audio) on YouTube">
+                <svg class="music-link-icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path fill="currentColor" d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/>
+                </svg>
+            </a>
+            <button type="button" class="music-btn" id="playPause" aria-label="Play music" aria-pressed="false">
+                <svg class="music-icon" id="playIcon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path fill="currentColor" d="M8 5v14l11-7z"/>
+                </svg>
+                <svg class="music-icon hidden" id="pauseIcon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path fill="currentColor" d="M6 4h4v16H6V4zm8 0h4v16h-4V4z"/>
+                </svg>
+            </button>
+            <input type="range" id="volumeControl" class="volume-slider" min="0" max="1" step="0.01" value="0.1" aria-label="Volume">
+            <button type="button" class="music-theme-btn" id="musicThemeBtn" aria-label="Switch to dark mode">
+                <svg class="music-theme-icon-svg music-theme-icon-light" viewBox="0 0 24 24" aria-hidden="true">
+                    <path fill="currentColor" d="M12 17.5a5.5 5.5 0 1 1 0-11 5.5 5.5 0 0 1 0 11Zm0-1.75a3.75 3.75 0 1 0 0-7.5 3.75 3.75 0 0 0 0 7.5ZM12 1.25a.75.75 0 0 1 .75.75v2.19a.75.75 0 0 1-1.5 0V2a.75.75 0 0 1 .75-.75Zm0 17.81a.75.75 0 0 1 .75.75V22a.75.75 0 0 1-1.5 0v-2.19a.75.75 0 0 1 .75-.75ZM4.05 4.05a.75.75 0 0 1 1.06 0l1.55 1.55a.75.75 0 1 1-1.06 1.06L4.05 5.11a.75.75 0 0 1 0-1.06Zm13.85 13.85a.75.75 0 0 1 1.06 0l1.55 1.55a.75.75 0 1 1-1.06 1.06l-1.55-1.55a.75.75 0 0 1 0-1.06ZM1.25 12a.75.75 0 0 1 .75-.75h2.19a.75.75 0 0 1 0 1.5H2a.75.75 0 0 1-.75-.75Zm17.81 0a.75.75 0 0 1 .75-.75H22a.75.75 0 0 1 0 1.5h-2.19a.75.75 0 0 1-.75-.75ZM5.6 18.4a.75.75 0 0 1 0-1.06l1.55-1.55a.75.75 0 1 1 1.06 1.06l-1.55 1.55a.75.75 0 0 1-1.06 0ZM17.45 6.55a.75.75 0 0 1 0-1.06l1.55-1.55a.75.75 0 1 1 1.06 1.06l-1.55 1.55a.75.75 0 0 1-1.06 0Z"/>
+                </svg>
+                <svg class="music-theme-icon-svg music-theme-icon-dark" viewBox="0 0 24 24" aria-hidden="true">
+                    <path fill="currentColor" d="M12.1 2.25c.35 0 .67.2.82.52 1.17 2.44 3.7 4.14 6.65 4.14.62 0 1.22.08 1.8.23a.88.88 0 0 1 .62 1.01c-.91 4.36-4.68 7.6-9.15 7.6-5.15 0-9.33-4.18-9.33-9.33 0-3.82 2.3-7.1 5.59-8.53a.88.88 0 0 1 1.02.5 8.64 8.64 0 0 0 1.58 3.36Z"/>
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <audio id="audio" loop>
+        <source src="misc/nav/audio1.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <div class="page-viewport" id="pageViewport">
+        <section class="page-panel is-active" data-page="home" aria-label="Home">
+            <div class="home-main">
+                <div class="home-left">
+                    <div class="bubble bubble-text" data-content="home-bubble"></div>
+                    <div class="home-actions">
+                        <div class="home-downloads">
+                            <button type="button" class="bubble bubble-preview-btn" data-content="home-download" data-download-id="resume" aria-label="Preview resume">
+                                <svg class="preview-icon" viewBox="0 0 24 24" aria-hidden="true">
+                                    <path fill="currentColor" d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>
+                                </svg>
+                                <span></span>
+                            </button>
+                            <button type="button" class="bubble bubble-preview-btn" data-content="home-download" data-download-id="cv" aria-label="Preview curriculum vitae">
+                                <svg class="preview-icon" viewBox="0 0 24 24" aria-hidden="true">
+                                    <path fill="currentColor" d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>
+                                </svg>
+                                <span></span>
+                            </button>
+                        </div>
+                        <div class="bubble bubble-date" aria-live="polite">
+                            <div class="analog-clock" id="local-analog-clock" aria-hidden="true">
+                                <svg class="analog-clock-face" viewBox="0 0 100 100" role="presentation">
+                                    <circle class="analog-clock-ring" cx="50" cy="50" r="46"></circle>
+                                    <line class="analog-clock-tick" x1="50" y1="6" x2="50" y2="11"></line>
+                                    <line class="analog-clock-tick" x1="50" y1="6" x2="50" y2="11" transform="rotate(30 50 50)"></line>
+                                    <line class="analog-clock-tick" x1="50" y1="6" x2="50" y2="11" transform="rotate(60 50 50)"></line>
+                                    <line class="analog-clock-tick" x1="50" y1="6" x2="50" y2="11" transform="rotate(90 50 50)"></line>
+                                    <line class="analog-clock-tick" x1="50" y1="6" x2="50" y2="11" transform="rotate(120 50 50)"></line>
+                                    <line class="analog-clock-tick" x1="50" y1="6" x2="50" y2="11" transform="rotate(150 50 50)"></line>
+                                    <line class="analog-clock-tick" x1="50" y1="6" x2="50" y2="11" transform="rotate(180 50 50)"></line>
+                                    <line class="analog-clock-tick" x1="50" y1="6" x2="50" y2="11" transform="rotate(210 50 50)"></line>
+                                    <line class="analog-clock-tick" x1="50" y1="6" x2="50" y2="11" transform="rotate(240 50 50)"></line>
+                                    <line class="analog-clock-tick" x1="50" y1="6" x2="50" y2="11" transform="rotate(270 50 50)"></line>
+                                    <line class="analog-clock-tick" x1="50" y1="6" x2="50" y2="11" transform="rotate(300 50 50)"></line>
+                                    <line class="analog-clock-tick" x1="50" y1="6" x2="50" y2="11" transform="rotate(330 50 50)"></line>
+                                    <line class="analog-clock-hand analog-clock-hour" x1="50" y1="50" x2="50" y2="30"></line>
+                                    <line class="analog-clock-hand analog-clock-minute" x1="50" y1="50" x2="50" y2="22"></line>
+                                    <line class="analog-clock-hand analog-clock-second" x1="50" y1="50" x2="50" y2="16"></line>
+                                    <circle class="analog-clock-cap" cx="50" cy="50" r="2.5"></circle>
+                                </svg>
+                            </div>
+                            <time id="local-date"></time>
+                            <p class="bubble-weather" id="local-weather">Loading weather…</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bubble bubble-image">
+                    <img src="misc/home/slide1.jpg" alt="" data-content="home-image">
+                </div>
+            </div>
+        </section>
+
+        <section class="page-panel" data-page="about" aria-label="About">
+            <div class="about-main">
+                <div class="about-header" data-content="about-header"></div>
+
+                <div class="about-bubbles" data-content="about-bubbles"></div>
+            </div>
+        </section>
+
+        <section class="page-panel" data-page="timeline" aria-label="Timeline">
+            <div class="timeline-main">
+                <div class="timeline-header" data-content="timeline-header"></div>
+
+                <div class="timeline-sections" data-content="timeline-sections"></div>
+            </div>
+        </section>
+
+        <section class="page-panel" data-page="experience" aria-label="Experience">
+            <div class="experience-main">
+                <div class="about-header" data-content="experience-header"></div>
+
+                <div class="experience-columns">
+                    <section class="experience-column" aria-labelledby="experience-professional-heading">
+                        <h3 class="experience-column-heading" id="experience-professional-heading" data-content="experience-professional-heading"></h3>
+                        <div class="experience-items" data-content="experience-professional-items"></div>
+                    </section>
+
+                    <section class="experience-column" aria-labelledby="experience-academic-heading">
+                        <h3 class="experience-column-heading" id="experience-academic-heading" data-content="experience-academic-heading"></h3>
+                        <div class="experience-items" data-content="experience-academic-items"></div>
+                    </section>
+                </div>
+
+                <section class="experience-projects" aria-labelledby="experience-projects-heading">
+                    <h3 class="experience-column-heading" id="experience-projects-heading" data-content="experience-projects-heading"></h3>
+                    <div class="experience-items experience-projects-items" data-content="experience-projects-items"></div>
+                </section>
+            </div>
+        </section>
+
+        <section class="page-panel" data-page="connect" aria-label="Connect">
+            <div class="connect-main">
+                <div class="connect-header" data-content="connect-header"></div>
+
+                <div class="connect-links">
+                    <a href="https://www.instagram.com/soju.tae/" class="bubble connect-bubble" data-connect="instagram" target="_blank" rel="noopener noreferrer">
+                        <svg class="connect-icon" viewBox="0 0 24 24" aria-hidden="true">
+                            <path fill="currentColor" d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                        </svg>
+                        <span></span>
+                    </a>
+
+                    <a href="https://www.facebook.com/song.tw.01" class="bubble connect-bubble" data-connect="facebook" target="_blank" rel="noopener noreferrer">
+                        <svg class="connect-icon" viewBox="0 0 24 24" aria-hidden="true">
+                            <path fill="currentColor" d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                        </svg>
+                        <span></span>
+                    </a>
+
+                    <a href="https://www.linkedin.com/in/twsong/" class="bubble connect-bubble" data-connect="linkedin" target="_blank" rel="noopener noreferrer">
+                        <svg class="connect-icon" viewBox="0 0 24 24" aria-hidden="true">
+                            <path fill="currentColor" d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                        </svg>
+                        <span></span>
+                    </a>
+
+                    <button type="button" class="bubble connect-bubble" id="emailBubble" data-connect="email" aria-haspopup="dialog" aria-controls="emailPopup">
+                        <span class="connect-icon connect-icon-at" aria-hidden="true">@</span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section class="page-panel" data-page="easter-egg" aria-label="Easter Egg" hidden>
+            <div class="easter-egg-main">
+                <div class="bubble easter-egg-bubble">
+                    <div class="easter-egg-gif-stage">
+                        <img src="misc/easter-egg/ee-intro.gif" alt="U I A cat" class="easter-egg-gif" width="200" height="200" loading="lazy" decoding="async">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p data-content="footer"></p>
+    </footer>
+
+    <div class="pdf-preview" id="pdfPreview" hidden>
+        <div class="pdf-preview-backdrop" data-close-preview></div>
+        <div class="pdf-preview-dialog bubble" role="dialog" aria-modal="true" aria-labelledby="pdfPreviewTitle">
+            <div class="pdf-preview-header">
+                <div class="window-controls">
+                    <button type="button" class="window-control window-control-close" data-close-preview aria-label="Close preview"></button>
+                    <button type="button" class="window-control window-control-maximize" aria-label="Enter full screen" aria-pressed="false"></button>
+                </div>
+                <h3 id="pdfPreviewTitle">Preview</h3>
+            </div>
+            <iframe id="pdfPreviewFrame" class="pdf-preview-frame" title="PDF preview"></iframe>
+        </div>
+    </div>
+
+    <div class="email-popup" id="emailPopup" hidden>
+        <div class="email-popup-backdrop" data-close-email></div>
+        <div class="email-popup-dialog bubble" role="dialog" aria-modal="true" aria-labelledby="emailPopupTitle">
+            <div class="email-popup-header">
+                <div class="window-controls">
+                    <button type="button" class="window-control window-control-close" data-close-email aria-label="Close email popup"></button>
+                    <button type="button" class="window-control window-control-maximize" aria-label="Enter full screen" aria-pressed="false"></button>
+                </div>
+                <h3 id="emailPopupTitle">Email</h3>
+            </div>
+            <div class="email-popup-body">
+                <form id="emailForm" class="email-compose-form" novalidate>
+                    <label class="email-field">
+                        <span class="email-field-label">Your email</span>
+                        <input type="email" id="emailFrom" name="email" required autocomplete="email" placeholder="you@example.com">
+                    </label>
+                    <label class="email-field">
+                        <span class="email-field-label">Subject</span>
+                        <input type="text" id="emailSubject" name="subject" required autocomplete="off" placeholder="What's this about?">
+                    </label>
+                    <label class="email-field">
+                        <span class="email-field-label">Message</span>
+                        <textarea id="emailMessage" name="message" required rows="5" placeholder="Write your message…"></textarea>
+                    </label>
+                    <input type="text" name="_honey" class="email-honey" tabindex="-1" autocomplete="off" aria-hidden="true">
+                    <div class="email-form-actions">
+                        <button type="submit" class="bubble email-send-btn" id="emailSubmitBtn">Send Email</button>
+                    </div>
+                    <p class="email-form-status" id="emailFormStatus" role="status" aria-live="polite" hidden></p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="experience-popup" id="experiencePopup" hidden>
+        <div class="experience-popup-backdrop" data-close-experience></div>
+        <div class="experience-popup-dialog bubble" role="dialog" aria-modal="true" aria-labelledby="experiencePopupOrganization">
+            <div class="experience-popup-chrome">
+                <div class="window-controls">
+                    <button type="button" class="window-control window-control-close" data-close-experience aria-label="Close experience popup"></button>
+                    <button type="button" class="window-control window-control-maximize" aria-label="Enter full screen" aria-pressed="false"></button>
+                </div>
+            </div>
+            <div class="experience-popup-content">
+                <div class="bubble experience-popup-section experience-popup-header-section">
+                    <div class="experience-popup-header-inner">
+                        <div class="experience-popup-logos" id="experiencePopupLogos"></div>
+                        <h3 class="experience-popup-organization" id="experiencePopupOrganization"></h3>
+                    </div>
+                </div>
+                <div class="bubble experience-popup-section experience-popup-subheader-section" id="experiencePopupSubheaderCombined">
+                    <p class="experience-popup-meta" id="experiencePopupLocationCombined"></p>
+                    <p class="experience-popup-meta" id="experiencePopupDurationCombined"></p>
+                </div>
+                <div class="bubble experience-popup-section experience-popup-meta-section" id="experiencePopupLocationSection" hidden>
+                    <p class="experience-popup-tags-heading">Location</p>
+                    <p class="experience-popup-meta" id="experiencePopupLocation"></p>
+                </div>
+                <div class="bubble experience-popup-section experience-popup-meta-section" id="experiencePopupDurationSection" hidden>
+                    <p class="experience-popup-tags-heading">Duration</p>
+                    <p class="experience-popup-meta" id="experiencePopupDuration"></p>
+                </div>
+                <div class="bubble experience-popup-section experience-popup-meta-section" id="experiencePopupTypeSection" hidden>
+                    <p class="experience-popup-tags-heading">Type</p>
+                    <p class="experience-popup-meta" id="experiencePopupType"></p>
+                </div>
+                <div class="bubble experience-popup-section experience-popup-meta-section" id="experiencePopupTitleSection" hidden>
+                    <p class="experience-popup-tags-heading">Title</p>
+                    <p class="experience-popup-meta" id="experiencePopupTitle"></p>
+                </div>
+                <div class="bubble experience-popup-section experience-popup-meta-section" id="experiencePopupUnitSection" hidden>
+                    <p class="experience-popup-tags-heading">Unit</p>
+                    <p class="experience-popup-meta" id="experiencePopupUnit"></p>
+                </div>
+                <div class="bubble experience-popup-section experience-popup-meta-section" id="experiencePopupMajorSection" hidden>
+                    <p class="experience-popup-tags-heading">Major</p>
+                    <p class="experience-popup-meta" id="experiencePopupFocus"></p>
+                </div>
+                <div class="bubble experience-popup-section experience-popup-meta-section" id="experiencePopupMinorSection" hidden>
+                    <p class="experience-popup-tags-heading">Minor</p>
+                    <p class="experience-popup-meta" id="experiencePopupSecondaryFocus"></p>
+                </div>
+                <div class="bubble experience-popup-section experience-popup-meta-section" id="experiencePopupWebsiteSection" hidden>
+                    <p class="experience-popup-tags-heading">Website</p>
+                    <a class="experience-popup-meta experience-popup-website-link" id="experiencePopupWebsite" href="#" target="_blank" rel="noopener noreferrer"></a>
+                </div>
+                <div class="bubble experience-popup-section experience-popup-body-section">
+                    <p class="experience-popup-tags-heading">Details</p>
+                    <div id="experiencePopupBody"></div>
+                </div>
+                <div class="bubble experience-popup-section experience-popup-courses-section" id="experiencePopupCourses" hidden>
+                    <p class="experience-popup-tags-heading">Courses</p>
+                    <div class="sub-bubbles experience-popup-tag-list" id="experiencePopupCourseList"></div>
+                </div>
+                <div class="bubble experience-popup-section experience-popup-tools-section" id="experiencePopupLanguage" hidden>
+                    <p class="experience-popup-tags-heading">Language</p>
+                    <div class="sub-bubbles experience-popup-tag-list" id="experiencePopupLanguageList"></div>
+                </div>
+                <div class="bubble experience-popup-section experience-popup-tools-section" id="experiencePopupTools" hidden>
+                    <p class="experience-popup-tags-heading">Tools</p>
+                    <div class="sub-bubbles experience-popup-tag-list" id="experiencePopupToolsList"></div>
+                </div>
+                <div class="bubble experience-popup-section experience-popup-tools-section" id="experiencePopupServices" hidden>
+                    <p class="experience-popup-tags-heading">Services</p>
+                    <div class="sub-bubbles experience-popup-tag-list" id="experiencePopupServicesList"></div>
+                </div>
+                <div class="bubble experience-popup-section experience-popup-tools-section" id="experiencePopupResources" hidden>
+                    <p class="experience-popup-tags-heading">Resources</p>
+                    <div class="sub-bubbles experience-popup-tag-list" id="experiencePopupResourcesList"></div>
+                </div>
+                <div class="bubble experience-popup-section experience-popup-credentials-section" id="experiencePopupCredentials">
+                    <p class="experience-popup-tags-heading">Honors &amp; Credentials</p>
+                    <div class="sub-bubbles experience-popup-tag-list" id="experiencePopupCredentialsList"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page-toast-stack" id="pageToastStack" hidden role="status" aria-live="polite"></div>
+
+    <script src="audio.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,714 @@
+{
+  "footer": "Biography © 2026 Tae Song. All written content is original. External audio, images, and linked media remain the property of their respective owners.",
+  "site": {
+    "title": "Tae's Biography",
+    "dates": [
+      "Created on April 21, 2025.",
+      "Published on August 31, 2025.",
+      "Updated on July 5, 2026."
+    ]
+  },
+  "home": {
+    "heading": "Home",
+    "paragraphs": [
+      "You found my biography!",
+      "Click the tabs above to learn more!"
+    ],
+    "imageAlt": "slide1",
+    "toast": {
+      "title": "Messages",
+      "message": "One of my favorite tracks is now playing. You can pause it by clicking on the pause icon on the top right. Also, there is a easter egg if you click on all the tabs!"
+    },
+    "downloads": [
+      {
+        "id": "resume",
+        "label": "Resume",
+        "pdf": "misc/home/resume.pdf",
+        "ariaLabel": "Preview Resume"
+      },
+      {
+        "id": "cv",
+        "label": "Curriculum Vitae",
+        "pdf": "misc/home/cv.pdf",
+        "ariaLabel": "Preview Curriculum Vitae"
+      }
+    ]
+  },
+  "about": {
+    "heading": "About",
+    "subtitle": "This is the about section of the website.",
+    "toast": {
+      "title": "Messages",
+      "message": "Take a look at my passions, memorable quotes, and hobbies/interests. It might give you better insight into my character!"
+    },
+    "sections": [
+      {
+        "heading": "Biography",
+        "paragraphs": [
+          "Hello my name is Tae. I am currently 24 years old. I am an only child with only half-siblings, who currently reside in other parts of the United States. I was born and raised in Maryland, and I currently live here in College Park, Maryland. I am a first-generation Korean American, university student, and military veteran of the United States Marine Corps. I study Information Science and Philosophy at the University of Maryland, College Park. Before transferring to the University of Maryland, College Park, I studied Software Development and Security, Cybersecurity, and I continued my studies in Philosophy. I pursue my passion with intrinsic motivation and a desire to excel."
+        ]
+      },
+      {
+        "heading": "Passions",
+        "paragraphs": [
+          "Technology",
+          "Engineering",
+          "Philosophy",
+          "Mathematics",
+          "Science"
+        ]
+      },
+      {
+        "heading": "Biblical Quotes",
+        "paragraphs": [
+          "Joshua 1:9",
+          "\"Have I not commanded you? Be strong and courageous. Do not be frightened, and do not be dismayed, for the Lord your God is with you wherever you go.\"",
+          "1 Timothy 6:11",
+          "\"But you, man of God, flee from all this, and pursue righteousness, godliness, faith, love, endurance and gentleness.\"",
+          "John 3:16",
+          "\"For God so loved the world that he gave his one and only Son, that whoever believes in him shall not perish but have eternal life.\"",
+          "John 13:34",
+          "\"A new command I give you: Love one another. As I have loved you, so you must love one another.\"",
+          "1 Corinthians 13:4-8",
+          "\"Love is patient, love is kind. It does not envy, it does not boast, it is not proud. It is not rude, it is not self-seeking, it is not easily angered, it keeps no account of wrongs. Love takes no pleasure in evil, but rejoices in the truth. It bears all things, believes all things, hopes all things, endures all things. Love never fails.\""
+        ]
+      },
+      {
+        "heading": "Renowned Quotes",
+        "paragraphs": [
+          "Martin Luther King, Jr.",
+          "\"Not be judged by the color of their skin but by the content of their character.\"",
+          "G. Micheal Hopf",
+          "\"Hard times create strong men, strong men create good times, good times create weak men, and weak men create hard times.\"",
+          "Mark Twain",
+          "\"If it's your job to eat a frog, it's best to do it first thing in the morning. And if it's your job to eat two frogs, it's best to eat the biggest one first.\"",
+          "Aristotle",
+          "\"We are what we repeatedly do. Excellence, then, is not an act, but a habit.\"",
+          "Admiral Chester W. Nimitz",
+          "\"Uncommon valor was a common virtue.\""
+        ]
+      },
+      {
+        "heading": "Interests/Hobbies",
+        "paragraphs": [
+          "Snowboarding",
+          "Airsoft",
+          "Photography",
+          "Disc Jockeying",
+          "Hot Rodding",
+          "Music",
+          "Gaming (PCMasterRace)",
+          "Theory",
+          "Culture",
+          "Football"
+        ]
+      }
+    ]
+  },
+  "timeline": {
+    "heading": "Timeline",
+    "subtitle": "A look at key moments along the way.",
+    "toast": {
+      "title": "Messages",
+      "message": "Let's streamline my experiences into timelines."
+    },
+    "sections": [
+      {
+        "heading": "Educational History",
+        "events": [
+          {
+            "date": "2016",
+            "text": "Enrolled to Old Mill Senior High."
+          },
+          {
+            "date": "2020",
+            "text": "Graduated from Old Mill Senior High."
+          },
+          {
+            "date": "2022",
+            "text": "Enrolled to Anne Arundel Community College."
+          },
+          {
+            "date": "2023",
+            "text": "Transferred to the University of Maryland Global Campus. Enrolled to Defense Acquisition University."
+          },
+          {
+            "date": "2025",
+            "text": "Transferred to the University of Maryland, College Park."
+          },
+          {
+            "date": "Now",
+            "text": "Currently remain at the University of Maryland, College Park."
+          }
+        ]
+      },
+      {
+        "heading": "Professional History",
+        "events": [
+          {
+            "date": "2018",
+            "text": "Hired by Subway."
+          },
+          {
+            "date": "2019",
+            "text": "Resigned from Subway. Hired by Chipotle."
+          },
+          {
+            "date": "2020",
+            "text": "Resigned from Chipotle. Hired by Exchange (Temporary)."
+          },
+          {
+            "date": "2021",
+            "text": "Enlisted to the United States Marine Corps."
+          },
+          {
+            "date": "2023",
+            "text": "Hired by Securitas."
+          },
+          {
+            "date": "2024",
+            "text": "Resigned from Securitas. Skill Bridge at Pat V. Mack IT."
+          },
+          {
+            "date": "2025",
+            "text": "Honorably discharged from the United States Marine Corps. Ended Skill Bridge at Pat V. Mack IT. Hired by Allied Universal/Northrop Grumman."
+          },
+          {
+            "date": "Now",
+            "text": "Currently remain at Allied Universal/Northrop Grumman."
+          }
+        ]
+      }
+    ]
+  },
+  "experience": {
+    "heading": "Experience",
+    "subtitle": "A look at my professional and academic experiences.",
+    "toast": {
+      "title": "Messages",
+      "message": "This is where I will go in-depth about my experiences."
+    },
+    "professional": {
+      "heading": "Professional Experience",
+      "items": [
+        {
+          "id": "northrop-grumman",
+          "current": true,
+          "image": "misc/experience/ng-logo.png",
+          "labelParts": [
+            {
+              "text": "Northrop Grumman"
+            },
+            {
+              "image": "misc/experience/au-logo.png"
+            },
+            {
+              "text": "Allied Universal"
+            }
+          ],
+          "popup": {
+            "organization": "Northrop Grumman / Allied Universal",
+            "logos": [
+              "misc/experience/ng-logo.png",
+              "misc/experience/au-logo.png"
+            ],
+            "location": "Maryland, United States",
+            "duration": "January 2025 - Present",
+            "type": "Part-Time",
+            "title": "Security Professional",
+            "website": "https://www.northropgrumman.com/",
+            "body": [
+              "As a part-time Security Professional with Northrop Grumman and Allied Universal, I help secure classified and sensitive areas including SCIFs and vaults. I monitor network traffic, register employees in and out using SIMS Client, and perform standard security guard duties such as access control, patrols, incident response, and documentation in accordance with post orders and site procedures."
+            ]
+          }
+        },
+        {
+          "id": "handshake",
+          "label": "Handshake",
+          "image": "misc/experience/hs-logo.png",
+          "popup": {
+            "organization": "Handshake",
+            "location": "Remote",
+            "duration": "December 2025 – April 2026",
+            "type": "Part-Time",
+            "title": "LLM Trainer",
+            "website": "https://joinhandshake.com/",
+            "body": [
+              "As a Handshake AI LLM Trainer, I help train and improve large language models. I review AI-generated responses, label and rate outputs, write and refine prompts, and give feedback on accuracy and quality. The work supports model evaluation and reinforcement learning so the models can respond more reliably and usefully."
+            ],
+            "toolsAndResources": {
+              "tools": [
+                "Handshake AI Platform",
+                "Handshake Annotation Platform",
+                "Canvas",
+                "Grammarly",
+                "Internal LLM",
+                "Prompt Engineering",
+                "Data Labeling",
+                "Model Evaluation",
+                "RLHF"
+              ],
+              "services": [
+                "Handshake AI",
+                "Deel",
+                "Stripe"
+              ],
+              "resources": [
+                "Large Language Models",
+                "MOVE Forum",
+                "Frontier AI Labs"
+              ]
+            }
+          }
+        },
+        {
+          "id": "pvm",
+          "label": "PVMIT",
+          "image": "misc/experience/pvm-logo.png",
+          "popup": {
+            "organization": "PVMIT",
+            "location": "United States",
+            "duration": "October 2024 – January 2025",
+            "type": "Full-Time (Skill Bridge)",
+            "title": "Software Engineer",
+            "website": "https://www.pvmit.com/",
+            "body": [
+              "At PVMIT as a Software Engineer through the DoD SkillBridge program, I worked on structured sandbox projects designed to mirror real client delivery on Palantir platforms. PVMIT is a veteran-owned digital services company and trusted Palantir partner, so the fellowship focused on building practical Foundry skills—from raw data ingestion through ontology modeling to operational applications—inside isolated sandbox environments before applying those patterns to mission-style scenarios.",
+              "Palantir Foundry is the core platform for this work. As a software engineer, the workflow typically moves from data integration to decision-ready software: ingest datasets into a project, transform and validate them in pipelines, model the results as ontology objects with defined properties and relationships, and expose that modeled data through interactive applications operators can actually use. Foundry treats the ontology as the semantic layer between backend data engineering and frontend operational tools, which is why most sandbox projects follow that same end-to-end path.",
+              "On the data engineering side, I used Pipeline Builder to create and manage batch pipelines with Spark-backed transforms—joining, filtering, aggregating, and materializing outputs without always writing pipeline code from scratch. For more custom logic, I worked in Code Repositories and Code Workspaces with Python, SQL, and PySpark (along with Spark and Flink concepts where applicable) to prototype transforms, test assumptions on sample data, and promote stable logic into production-style pipelines. HyperAuto and related integration patterns helped accelerate pipeline setup when connecting structured source systems into Foundry.",
+              "Ontology development was a major part of each sandbox project. I defined object types, properties, link types, and actions that represent real-world entities—translating cleaned datasets into a governed object model teams can query consistently. Object Views configured how those objects appear in applications, while Actions let users write back to the ontology under controlled rules. The Ontology SDK and Objects Gateway extended that model for programmatic access when an application needed custom behavior beyond out-of-the-box tooling.",
+              "For application development, I built operator-facing workflows in Workshop—object tables, detail panels, filters, guided forms, and action buttons wired directly to ontology objects. Quiver and Contour supported analysis and charting on top of the same modeled data, and Slate supported document-style reporting where a project called for it. This is where software engineering on Foundry differs from traditional app dev: instead of hard-coding every screen against raw tables, you compose applications on a shared ontology so data, permissions, and actions stay consistent across tools.",
+              "I also explored Palantir AIP capabilities such as AIP Logic and AIP Agent Studio to connect LLM-assisted workflows to ontology-backed data—classification, guided reasoning, and agent-style tasks within Foundry’s security and governance model. Across Gotham, Foundry, AIP, and Apollo concepts introduced in training, the through-line was the same: use sandbox projects assigned by PVMIT to practice the full stack a Palantir software engineer touches—pipelines, ontology, applications, and custom extensions—so solutions move from prototype datasets to usable operational software."
+            ],
+            "toolsAndResources": {
+              "language": [
+                "Python",
+                "SQL"
+              ],
+              "tools": [
+                "Palantir",
+                "Ontology",
+                "Pipeline Builder",
+                "Workshop",
+                "Contour",
+                "Quiver",
+                "Slate",
+                "Code Repositories",
+                "Code Workspaces",
+                "Objects Gateway",
+                "Ontology SDK",
+                "AIP Logic",
+                "AIP Agent Studio",
+                "HyperAuto",
+                "Actions",
+                "Object Views",
+                "PySpark",
+                "Apache Spark",
+                "Apache Flink"
+              ],
+              "services": [
+                "Palantir Foundry",
+                "Palantir Gotham",
+                "Palantir AIP",
+                "Palantir Apollo"
+              ],
+              "resources": [
+                "Palantir Developer Documentation",
+                "PVMIT"
+              ]
+            },
+            "credentials": [
+              {
+                "label": "Palantir Foundry: Foundations",
+                "url": "https://verify.skilljar.com/c/uzjhau5fka92"
+              },
+              {
+                "label": "Palantir Foundry: AIP Builder Foundations",
+                "url": "https://verify.skilljar.com/c/fjsiaa3tcz4w"
+              }
+
+            ]
+          }
+        },
+        {
+          "id": "securitas",
+          "label": "Securitas",
+          "image": "misc/experience/securitas-logo.png",
+          "popup": {
+            "organization": "Securitas",
+            "location": "Maryland, United States",
+            "duration": "June 2023 – May 2024",
+            "type": "Part-Time",
+            "title": "Security Guard",
+            "website": "https://www.securitasinc.com/",
+            "body": [
+              "As a part-time Security Guard with Securitas, I help protect people and property at assigned sites. Responsibilities include monitoring premises, conducting patrols, controlling access, responding to incidents, and documenting activity in accordance with post orders and company procedures."
+            ]
+          }
+        },
+        {
+          "id": "usmc",
+          "label": "United States Marine Corps",
+          "image": "misc/experience/usmc-ega.png",
+          "popup": {
+            "organization": "United States Marine Corps",
+            "location": "United States",
+            "duration": "February 2021 – February 2025",
+            "type": "Contract",
+            "title": "Aviation Operations Specialist",
+            "unit": "Marine Operational Test and Evaluation Squadron One (VMX-1)",
+            "website": "https://www.marines.mil/",
+            "body": [
+              "As an Aviation Operations Specialist (MOS 7041) in the United States Marine Corps, I supported Marine aviation units by planning, coordinating, and managing the administrative and operational infrastructure that keeps squadrons flying safely. The role sits in squadron operations—working closely with pilots, maintenance, and airfield personnel to turn training requirements, aircraft availability, and airspace into executable daily flight schedules.",
+              "A core part of the job was flight scheduling and recordkeeping. I helped build and adjust daily flight and training schedules that balanced pilot currency, syllabus requirements, aircraft status, and changing operational priorities. I processed and transmitted flight plans, maintained master and individual flight logs, and kept aviation operations files current so aircrews and leadership had accurate visibility into who was flying, when, and under what conditions.",
+              "I used M-SHARP—the Marine Sierra-Hotel Aviation Readiness Program—to document flight activity and training and readiness data. That included logging flight records, tracking aircrew training events against published T&R standards, and supporting readiness reporting so commanders could assess unit proficiency. Accurate entries in M-SHARP were essential because the system is the authoritative source for aviation flight history and readiness metrics across the wing.",
+              "I also maintained and disseminated flight information publications and operational notices. That work included managing NOTAMs (Notices to Air Missions), posting radio and landing facility charts, flight information manuals, maps, and related guides so aircrews had current navigational and airfield data. I coordinated airspace and range scheduling through RFMSS to align training areas and special-use airspace with planned flight operations.",
+              "On the airfield side, I coordinated support functions required for safe flight operations—interface with air traffic control, weather and METOC services, fuel services, transient aircraft handling, and other airfield activities tied to each mission. I assisted with flight clearance operations, arrival and departure reporting, and the communication flow between the squadron, operations centers, and supporting agencies before and during launches.",
+              "Beyond daily scheduling, I supported operational reporting and unit readiness tasks through systems such as MCTIMS, helped prepare aviation operations and safety reports, and assisted with correspondence, orders, and records management in the operations shop. The pace followed the flying schedule: when the squadron was executing heavy flight operations, the operations desk ran long hours with constant updates to plans, logs, and coordination—making sure every detail was in place so Marines could fly the mission."
+            ],
+            "toolsAndResources": {
+              "tools": [
+                "M-SHARP",
+                "MCTIMS",
+                "RFMSS",
+                "NOTAM"
+              ],
+              "resources": [
+                "DoDDs",
+                "DoDIs",
+                "DoDMs",
+                "DTMs",
+                "AIs",
+                "MARADMINS",
+                "FAA"
+              ]
+            },
+            "credentials": [
+              "Unit Safety Officer License (2024)",
+              "Lean Six Sigma: Green Belt (2023)",
+              "Lean Six Sigma: Yellow Belt (2023)",
+              "Marine Leadership & Ethics Certification (2023)",
+              "M-SHARP: Adminstrator Certification (2021)",
+              "Marine Aviation Operations Specialist (2021)",
+              "Marine Combat Certification (2021)",
+              "National Defense Service Medal (2021)",
+              "Global War on Terrorism Expeditionary Medal (2021)"
+            ]
+          }
+        }
+      ]
+    },
+    "academic": {
+      "heading": "Academic Experience",
+      "items": [
+        {
+          "id": "umd",
+          "current": true,
+          "label": "University of Maryland, College Park",
+          "image": "misc/experience/umd-logo.png",
+          "popup": {
+            "organization": "University of Maryland, College Park",
+            "location": "College Park, Maryland",
+            "duration": "February 2025 – Present (December 2026)",
+            "focus": "Information Science",
+            "secondary-focus": "Philosophy",
+            "website": "https://www.umd.edu/",
+            "courseLinkBase": "https://planetterp.com/course/",
+            "body": [
+              "My primary focus is Information Science at the University of Maryland’s College of Information. The program explores the intersection of information, people, and technology, building skills in database design, information architecture, programming, data analytics, user-centered design, and organizational technology—alongside foundations in the social sciences, leadership, and the humanities.",
+              "My secondary focus is Philosophy. The major investigates the foundations of reality, knowledge, and value through training in clear thinking, inventive synthesis, and precise expression. Coursework spans logic, the history of philosophy, value theory, and metaphysics and epistemology—developing analytical skills that transfer to law, policy, technology ethics, and any field requiring rigorous reasoning."
+            ],
+            "courses": [
+              "INST201",
+              "MATH115",
+              "PHIL362",
+              "PSYC100",
+              "PHIL366",
+              "MATH113",
+              "ECON201",
+              "ARTH265",
+              "ECON200",
+              "PHIL245",
+              "BMGT220",
+              "TLPL443",
+              "PHIL140",
+              "MATH003",
+              "AREC345"
+            ],
+            "credentials": [
+              "Thomas C. & Maria A. Harris Family Endowed Scholarship (Fall 2025 - Spring 2026)",
+              "William E. Fleck '83 & Sally L. Fleck Endowed Scholarship (Fall 2025 - Spring 2026)"
+            ]
+          }
+        },
+        {
+          "id": "umgc",
+          "label": "University of Maryland, Global Campus",
+          "image": "misc/experience/umgc-logo.png",
+          "popup": {
+            "organization": "University of Maryland, Global Campus",
+            "location": "Maryland, United States",
+            "duration": "June 2023 – February2025",
+            "focus": "Software Development and Security",
+            "secondary-focus": "Philosophy",
+            "website": "https://www.umgc.edu/",
+            "body": [
+              "My primary focus was Software Development and Security. This program develops skills in multiple programming languages and relational databases while applying industry and government security best practices. Coursework covered designing, developing, and testing secure software applications, detecting vulnerabilities, secure web and cloud programming, database security, threat modeling, and software penetration testing.",
+              "My secondary focus was Philosophy. I studied the foundations of reality, knowledge, and value—developing skills in critical reading, argument analysis, and precise writing that complement technical work in software development and security."
+            ],
+            "courses": [
+              "PHIL336",
+              "HIST125",
+              "CMSC215",
+              "CMSC115",
+              "PHIL348",
+              "PHIL304",
+              "ECON103",
+              "WRTG393",
+              "SPCH100",
+              "PHIL110",
+              "PHIL100",
+              "MATH107",
+              "CMSC105",
+              "HIST115",
+              "BIOL102",
+              "BIOL101",
+              "PACE111T",
+              "NUTR100",
+              "LIBS150"
+            ],
+            "credentials": [
+              "Dean's List (Fall 2024)",
+              "Dean's List (Spring 2024)",
+              "National Society of Leadership and Success (Spring 2024)",
+              "National Society of Collegiate Scholars (Fall 2023)",
+              "Dean's List (Fall 2023)",
+              "Dean's List (Spring 2023)"
+            ]
+          }
+        },
+        {
+          "id": "dau",
+          "label": "Defense Acquisition University",
+          "image": "misc/experience/dau-logo.png",
+          "popup": {
+            "organization": "Defense Acquisition University",
+            "location": "Fort Gregg-Adams, Virginia",
+            "duration": "August 2023 - June 2024",
+            "focus": "Software Development",
+            "website": "https://www.dau.edu/",
+            "body": [
+              "My focus at Defense Acquisition University was the Software Development Knowledge Area, a cross-functional field centered on applying iterative development methodologies and tools to design, test, deliver, and utilize software systems. Training covered Agile and DevSecOps principles, the DoD Software Acquisition Pathway, continuous delivery, product roadmaps, contracting for Agile development, scaled Agile practices, and modern DoD software development—including value assessment, metrics, and technical currency for defense programs."
+            ],
+            "courses": [
+              "SWE0051",
+              "SWE0050",
+              "SWE0032",
+              "SWE0027",
+              "SWE0026",
+              "SWE0025",
+              "SWE0019",
+              "SWE0017",
+              "SWE0016",
+              "SWE0015",
+              "SWE0014",
+              "SWE0010",
+              "SWE0009",
+              "SWE0005"
+            ]
+          }
+        },
+        {
+          "id": "aacc",
+          "label": "Anne Arundel Community College",
+          "image": "misc/experience/aacc-logo.png",
+          "popup": {
+            "organization": "Anne Arundel Community College",
+            "location": "Arnold, Maryland",
+            "duration": "May 2022 – June 2023",
+            "focus": "Cybersecurity and Information Assurance",
+            "website": "https://www.aacc.edu/",
+            "body": [
+              "My focus was Cybersecurity and Information Assurance in Anne Arundel Community College’s Information Assurance and Cybersecurity program. The security concentration prepares students for entry-level careers in information assurance and cybersecurity, emphasizing threats and vulnerabilities, prevention at the technical and human levels, detection, response, and security management using current industry practices and tools.",
+              "The curriculum is validated by the National Security Agency as a National Center of Academic Excellence in Cyber Defense and maps to DHS/NSA requirements. Program objectives also align with CompTIA Network+ and CompTIA Security+ knowledge areas, though the program does not provide certification exam training or testing."
+            ],
+            "courses": [
+              "ENG102",
+              "CTS110",
+              "CTS120",
+              "CTP194",
+              "CJS206",
+              "ENG101A",
+              "CTS107",
+              "BPA105"
+            ],
+            "credentials": [
+              "Dean's List (Fall 2022)"
+            ]
+          }
+        }
+      ]
+    },
+    "projects": {
+      "heading": "Projects",
+      "items": [
+        {
+          "id": "melon-project",
+          "status": "in-progress",
+          "label": "Melon",
+          "popup": {
+            "organization": "Melon",
+            "location": "Personal Project",
+            "duration": "In Progress",
+            "body": [
+              "In progress."
+            ]
+          }
+        },
+        {
+          "id": "biography",
+          "current": true,
+          "label": "Biography",
+          "popup": {
+            "organization": "Biography",
+            "location": "Personal Project",
+            "duration": "August 2025 – Present (Live)",
+            "body": [
+              "This is the live site you are viewing now—a personal biography and portfolio built from scratch with HTML, CSS, and JavaScript, with Artificial Intelligence (AI) assistance during development. It presents my background, timeline, professional and academic experience, projects, and ways to connect, all driven by a single content.json file so text and structure can be updated without a backend.",
+              "The site uses hash-based routing to move between Home, About, Timeline, Experience, and Connect with animated page transitions. A responsive bubble-style layout, light and dark themes (with system preference support and saved theme choice), and SVG icons throughout keep the interface consistent across screen sizes. The brand menu shows created, published, and last-updated dates; a Node.js script and Cursor hooks keep the updated date in sync whenever site code changes.",
+              "The Home page includes animated welcome text, live local date and time, weather from Open-Meteo using the Geolocation API (with a fallback location), and animated PDF previews for my resume and curriculum vitae. The About page organizes biography, passions, quotes, and interests into section bubbles. Timeline splits educational and professional history into dated events. The Connect page links to Instagram, Facebook, and LinkedIn, and includes an email form powered by FormSubmit.io. Static assets are organized under misc/ for home media, navigation audio, experience logos, and easter-egg files.",
+              "Experience is split into Professional Experience, Academic Experience, and Projects. Each entry opens a fullscreen-capable popup with labeled meta bubbles—professional entries show Location, Duration, Type, Title, optional Unit, and Website; academic entries show Location, Duration, Major, Minor, and Website; projects use a combined location and duration line. A Details section holds in-depth write-ups, Courses link to PlanetTerp with a scroll-triggered highlight, and Tools & Resources are grouped into Language, Tools, Services, and Resources. Honors & Credentials appear when configured, with optional clickable links for certificates and awards.",
+              "Project bubbles use status dots: green for current work, yellow for in-progress efforts such as Melon, and red for completed projects like Anaconda Database Project. Professional and academic popups include real role descriptions, tools used on the job, and credentials where applicable. A persistent music player in the navigation bar plays background audio with volume control, track links to YouTube, and play/pause state synced to the UI.",
+              "Per-page toast messages introduce each section on first visit, with optional notification sounds via the Web Audio API. Session and local storage track toast history, tab visits, theme preference, and easter egg progress. Hidden easter egg: visiting every main tab unlocks a secret page with Canvas 2D effects—sparks, fireflies, and fireworks—timed to a second audio track, plus a multi-stage GIF animation and gradual dark-mode transition. All images, audio, GIFs, PDFs, and external hyperlinks remain the property of their respective owners; all written content on the site is original."
+            ],
+            "toolsAndResources": {
+              "language": [
+                "HTML",
+                "CSS",
+                "JavaScript",
+                "JSON",
+                "Bash"
+              ],
+              "tools": [
+                "Canvas 2D",
+                "Fetch API",
+                "HTML5 Audio",
+                "Web Audio API",
+                "Geolocation API",
+                "Web Storage API",
+                "Intersection Observer",
+                "History API",
+                "requestAnimationFrame",
+                "SVG",
+                "iframe",
+                "CSS Variables",
+                "ARIA",
+                "Node.js",
+                "Cursor",
+                "Cursor Hooks",
+                "VSCode",
+                "Version Control",
+                "Python PIL",
+                "Composer 2.5 (AI)"
+              ],
+              "services": [
+                "FormSubmit.io",
+                "Open-Meteo",
+                "PlanetTerp",
+                "GitHub Pages"
+              ],
+              "resources": [
+                "GitHub",
+                "YouTube",
+                "Instagram",
+                "Facebook",
+                "LinkedIn",
+                "PDF",
+                "GIF",
+                "MP3",
+                "JPEG"
+              ]
+            }
+          }
+        },
+        {
+          "id": "anaconda-database-project",
+          "label": "Anaconda Database Project",
+          "popup": {
+            "organization": "Anaconda Database Project",
+            "location": "Course Project",
+            "duration": "June 2025",
+            "website": "https://www.udemy.com/course/python-sql-tableau-integrating-python-sql-and-tableau/",
+            "body": [
+              "This project follows the Udemy course “Python + SQL + Tableau: Integrating Python, SQL, and Tableau” by 365 Careers. The course centers on software integration across Python, SQL, and Tableau through a real-world case study using the Absenteeism at Work dataset.",
+              "In Jupyter Notebook, I built a full preprocessing pipeline in pandas. Starting from Absenteeism_data.csv, I removed identifiers, grouped absence reasons into four categories with one-hot encoding, created age dummy variables, parsed dates with pd.to_datetime, extracted month and weekday values, recoded education levels, and exported a cleaned Absenteeism_preprocessed.csv file ready for modeling.",
+              "For machine learning, I used scikit-learn to predict excessive absenteeism. I created a binary target with NumPy where absenteeism above three hours marked excessive absence, scaled numeric features with StandardScaler, split the data with train_test_split, trained a LogisticRegression model, evaluated accuracy on the training set, and summarized intercept and coefficient values in a feature table for interpretation.",
+              "On the database side, I worked through the course’s MySQL setup and used MySQL Workbench to store and query the processed data. I connected Python and SQL so data could move from Jupyter into the database, reinforcing how SQL handles storage and manipulation while Python handles computation.",
+              "In Tableau Public, I connected to the prepared data and built visualizations to analyze absenteeism patterns. I interpreted the charts alongside the Jupyter outputs to compare model findings with business-facing dashboard views.",
+              "Overall, this project gave me end-to-end practice in data preprocessing, applied machine learning, database integration, and visualization—the full workflow the course describes for automating recurring analysis tasks in a professional setting."
+            ],
+            "toolsAndResources": {
+              "language": [
+                "Python",
+                "SQL"
+              ],
+              "tools": [
+                "Project Jupyter",
+                "Jupyter Notebook",
+                "Anaconda Navigator",
+                "Tableau Public",
+                "Microsoft Excel",
+                "sklearn",
+                "pandas",
+                "NumPy",
+                "IPython",
+                "MySQL Workbench",
+                "Logistic Regression"
+              ],
+              "services": [
+                "MySQL"
+              ],
+              "resources": [
+                "CSV",
+                "Udemy",
+                "365 Careers"
+              ]
+            },
+            "credentials": [
+              {
+                "label": "Certificate of Completion",
+                "url": "https://www.udemy.com/certificate/UC-b98e6558-5012-4fd3-b6e1-073a9cd3ddac/"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "connect": {
+    "heading": "Connect",
+    "subtitle": "Connect with me!",
+    "toast": {
+      "title": "Messages",
+      "message": "Thanks for visiting, feel free to connect with me with the links below."
+    },
+    "links": [
+      {
+        "id": "instagram",
+        "label": "Instagram"
+      },
+      {
+        "id": "facebook",
+        "label": "Facebook"
+      },
+      {
+        "id": "linkedin",
+        "label": "LinkedIn"
+      },
+      {
+        "id": "email",
+        "label": "Email"
+      }
+    ]
+  }
+}
