@@ -5,7 +5,7 @@
     "dates": [
       "Created on April 21, 2025.",
       "Published on August 31, 2025.",
-      "Updated on July 5, 2026."
+      "Updated on August 21, 2026."
     ]
   },
   "home": {
@@ -92,15 +92,16 @@
         "heading": "Interests/Hobbies",
         "paragraphs": [
           "Snowboarding",
-          "Airsoft",
+          "Military Simulation Airsoft",
           "Photography",
           "Disc Jockeying",
-          "Hot Rodding",
-          "Music",
-          "Gaming (PCMasterRace)",
-          "Theory",
-          "Culture",
-          "Football"
+          "Gear & Motor Head",
+          "Indie Rock & Electronic Music",
+          "Competitive Computer Gaming",
+          "Metapsychological Theories",
+          "Cultural Studies",
+          "Football",
+          "Kendo"
         ]
       }
     ]
@@ -212,7 +213,7 @@
               "misc/experience/ng-logo.png",
               "misc/experience/au-logo.png"
             ],
-            "location": "Maryland, United States",
+            "location": "Annapolis Junction, MD",
             "duration": "January 2025 - Present",
             "type": "Part-Time",
             "title": "Security Professional",
@@ -228,9 +229,9 @@
           "image": "misc/experience/hs-logo.png",
           "popup": {
             "organization": "Handshake",
-            "location": "Remote",
+            "location": "San Francisco, CA",
             "duration": "December 2025 – April 2026",
-            "type": "Part-Time",
+            "type": "Freelance",
             "title": "LLM Trainer",
             "website": "https://joinhandshake.com/",
             "body": [
@@ -255,7 +256,6 @@
               ],
               "resources": [
                 "Large Language Models",
-                "MOVE Forum",
                 "Frontier AI Labs"
               ]
             }
@@ -267,9 +267,9 @@
           "image": "misc/experience/pvm-logo.png",
           "popup": {
             "organization": "PVMIT",
-            "location": "United States",
+            "location": "San Diego, CA",
             "duration": "October 2024 – January 2025",
-            "type": "Full-Time (Skill Bridge)",
+            "type": "Full-Time",
             "title": "Software Engineer",
             "website": "https://www.pvmit.com/",
             "body": [
@@ -336,7 +336,7 @@
           "image": "misc/experience/securitas-logo.png",
           "popup": {
             "organization": "Securitas",
-            "location": "Maryland, United States",
+            "location": "Yuma, AZ",
             "duration": "June 2023 – May 2024",
             "type": "Part-Time",
             "title": "Security Guard",
@@ -352,7 +352,7 @@
           "image": "misc/experience/usmc-ega.png",
           "popup": {
             "organization": "United States Marine Corps",
-            "location": "United States",
+            "location": "Yuma, AZ",
             "duration": "February 2021 – February 2025",
             "type": "Contract",
             "title": "Aviation Operations Specialist",
@@ -408,8 +408,8 @@
           "image": "misc/experience/umd-logo.png",
           "popup": {
             "organization": "University of Maryland, College Park",
-            "location": "College Park, Maryland",
-            "duration": "February 2025 – Present (December 2026)",
+            "location": "College Park, MD",
+            "duration": "February 2025 – Present - December 2026",
             "focus": "Information Science",
             "secondary-focus": "Philosophy",
             "website": "https://www.umd.edu/",
@@ -419,6 +419,12 @@
               "My secondary focus is Philosophy. The major investigates the foundations of reality, knowledge, and value through training in clear thinking, inventive synthesis, and precise expression. Coursework spans logic, the history of philosophy, value theory, and metaphysics and epistemology—developing analytical skills that transfer to law, policy, technology ethics, and any field requiring rigorous reasoning."
             ],
             "courses": [
+              "ENES210",
+              "INST126",
+              "INST335",
+              "INST352",
+              "INST311",
+              "STAT100",
               "INST201",
               "MATH115",
               "PHIL362",
@@ -447,8 +453,8 @@
           "image": "misc/experience/umgc-logo.png",
           "popup": {
             "organization": "University of Maryland, Global Campus",
-            "location": "Maryland, United States",
-            "duration": "June 2023 – February2025",
+            "location": "Adelphi, MD",
+            "duration": "June 2023 – February 2025",
             "focus": "Software Development and Security",
             "secondary-focus": "Philosophy",
             "website": "https://www.umgc.edu/",
@@ -493,7 +499,7 @@
           "image": "misc/experience/dau-logo.png",
           "popup": {
             "organization": "Defense Acquisition University",
-            "location": "Fort Gregg-Adams, Virginia",
+            "location": "Fort Gregg-Adams, VA",
             "duration": "August 2023 - June 2024",
             "focus": "Software Development",
             "website": "https://www.dau.edu/",
@@ -524,7 +530,7 @@
           "image": "misc/experience/aacc-logo.png",
           "popup": {
             "organization": "Anne Arundel Community College",
-            "location": "Arnold, Maryland",
+            "location": "Arnold, MD",
             "duration": "May 2022 – June 2023",
             "focus": "Cybersecurity and Information Assurance",
             "website": "https://www.aacc.edu/",
@@ -558,11 +564,25 @@
           "label": "Melon",
           "popup": {
             "organization": "Melon",
-            "location": "Personal Project",
-            "duration": "In Progress",
+            "duration": "TBD",
+            "status": "In Progress",
             "body": [
               "In progress."
-            ]
+            ],
+            "toolsAndResources": {
+              "language": [
+                "TBD"
+              ],
+              "tools": [
+                "TBD"
+              ],
+              "services": [
+                "TBD"
+              ],
+              "resources": [
+                "TBD"
+              ]
+            }
           }
         },
         {
@@ -571,13 +591,13 @@
           "label": "Biography",
           "popup": {
             "organization": "Biography",
-            "location": "Personal Project",
-            "duration": "August 2025 – Present (Live)",
+            "duration": "April 2025 - Present",
+            "status": "Live",
             "body": [
               "This is the live site you are viewing now—a personal biography and portfolio built from scratch with HTML, CSS, and JavaScript, with Artificial Intelligence (AI) assistance during development. It presents my background, timeline, professional and academic experience, projects, and ways to connect, all driven by a single content.json file so text and structure can be updated without a backend.",
               "The site uses hash-based routing to move between Home, About, Timeline, Experience, and Connect with animated page transitions. A responsive bubble-style layout, light and dark themes (with system preference support and saved theme choice), and SVG icons throughout keep the interface consistent across screen sizes. The brand menu shows created, published, and last-updated dates; a Node.js script and Cursor hooks keep the updated date in sync whenever site code changes.",
               "The Home page includes animated welcome text, live local date and time, weather from Open-Meteo using the Geolocation API (with a fallback location), and animated PDF previews for my resume and curriculum vitae. The About page organizes biography, passions, quotes, and interests into section bubbles. Timeline splits educational and professional history into dated events. The Connect page links to Instagram, Facebook, and LinkedIn, and includes an email form powered by FormSubmit.io. Static assets are organized under misc/ for home media, navigation audio, experience logos, and easter-egg files.",
-              "Experience is split into Professional Experience, Academic Experience, and Projects. Each entry opens a fullscreen-capable popup with labeled meta bubbles—professional entries show Location, Duration, Type, Title, optional Unit, and Website; academic entries show Location, Duration, Major, Minor, and Website; projects use a combined location and duration line. A Details section holds in-depth write-ups, Courses link to PlanetTerp with a scroll-triggered highlight, and Tools & Resources are grouped into Language, Tools, Services, and Resources. Honors & Credentials appear when configured, with optional clickable links for certificates and awards.",
+              "Experience is split into Professional Experience, Academic Experience, and Projects. Each entry opens a fullscreen-capable popup with labeled meta bubbles—professional entries show Location, Duration, Type, Title, optional Unit, and Website; academic entries show Location, Duration, Major, Minor, and Website; projects show Duration, Status, and Website. A Details section holds in-depth write-ups, Courses link to PlanetTerp with a scroll-triggered highlight, and Tools & Resources are grouped into Language, Tools, Services, and Resources. Honors & Credentials appear when configured, with optional clickable links for certificates and awards.",
               "Project bubbles use status dots: green for current work, yellow for in-progress efforts such as Melon, and red for completed projects like Anaconda Database Project. Professional and academic popups include real role descriptions, tools used on the job, and credentials where applicable. A persistent music player in the navigation bar plays background audio with volume control, track links to YouTube, and play/pause state synced to the UI.",
               "Per-page toast messages introduce each section on first visit, with optional notification sounds via the Web Audio API. Session and local storage track toast history, tab visits, theme preference, and easter egg progress. Hidden easter egg: visiting every main tab unlocks a secret page with Canvas 2D effects—sparks, fireflies, and fireworks—timed to a second audio track, plus a multi-stage GIF animation and gradual dark-mode transition. All images, audio, GIFs, PDFs, and external hyperlinks remain the property of their respective owners; all written content on the site is original."
             ],
@@ -636,8 +656,8 @@
           "label": "Anaconda Database Project",
           "popup": {
             "organization": "Anaconda Database Project",
-            "location": "Course Project",
-            "duration": "June 2025",
+            "duration": "Completed",
+            "status": "Completed",
             "website": "https://www.udemy.com/course/python-sql-tableau-integrating-python-sql-and-tableau/",
             "body": [
               "This project follows the Udemy course “Python + SQL + Tableau: Integrating Python, SQL, and Tableau” by 365 Careers. The course centers on software integration across Python, SQL, and Tableau through a real-world case study using the Absenteeism at Work dataset.",

@@ -2510,6 +2510,8 @@
         const subheaderCombinedEl = document.getElementById('experiencePopupSubheaderCombined');
         const locationSectionEl = document.getElementById('experiencePopupLocationSection');
         const durationSectionEl = document.getElementById('experiencePopupDurationSection');
+        const statusSectionEl = document.getElementById('experiencePopupStatusSection');
+        const statusEl = document.getElementById('experiencePopupStatus');
         const typeSectionEl = document.getElementById('experiencePopupTypeSection');
         const typeEl = document.getElementById('experiencePopupType');
         const titleSectionEl = document.getElementById('experiencePopupTitleSection');
@@ -2653,9 +2655,12 @@
             const popup = item.popup || {};
             const isAcademic = item.experienceCategory === 'academic';
             const isProfessional = item.experienceCategory === 'professional';
-            const usesLabeledMetaSections = isAcademic || isProfessional;
+            const isProject = item.experienceCategory === 'project';
+            const usesLabeledMetaSections = isAcademic || isProfessional || isProject;
             const locationText = popup.location || 'Location TBD';
             const durationText = popup.duration || 'Duration TBD';
+            const statusText = popup.status
+                || (item.current ? 'Live' : (item.status === 'in-progress' || item.inProgress ? 'In Progress' : 'Completed'));
             const typeText = popup.type || 'Type TBD';
             const titleText = popup.title || 'Title TBD';
             const websiteUrl = popup.website?.trim() || '';
@@ -2676,11 +2681,15 @@
             }
 
             if (locationSectionEl) {
-                locationSectionEl.hidden = !usesLabeledMetaSections;
+                locationSectionEl.hidden = !(isAcademic || isProfessional);
             }
 
             if (durationSectionEl) {
                 durationSectionEl.hidden = !usesLabeledMetaSections;
+            }
+
+            if (statusSectionEl) {
+                statusSectionEl.hidden = !isProject;
             }
 
             if (typeSectionEl) {
@@ -2693,11 +2702,15 @@
 
             if (usesLabeledMetaSections) {
                 if (locationEl) {
-                    locationEl.textContent = locationText;
+                    locationEl.textContent = isProject ? '' : locationText;
                 }
 
                 if (durationEl) {
                     durationEl.textContent = durationText;
+                }
+
+                if (statusEl) {
+                    statusEl.textContent = isProject ? statusText : '';
                 }
             } else {
                 if (locationCombinedEl) {

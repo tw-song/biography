@@ -1342,6 +1342,7 @@ html.theme-changing footer,
 html.theme-changing .bubble,
 html.theme-changing .experience-bubble,
 html.theme-changing .experience-icon,
+html.theme-changing .experience-label-icon,
 html.theme-changing .experience-popup-logo,
 html.theme-changing .connect-bubble,
 html.theme-changing .email-send-btn,
@@ -1362,6 +1363,11 @@ html.theme-changing .experience-popup-section {
 		color 0.2s ease,
 		border-color 0.2s ease,
 		box-shadow 0.2s ease;
+}
+
+html.theme-changing .experience-label-icon[src*="au-logo"],
+html.theme-changing .experience-popup-logo[src*="au-logo"] {
+	transition: filter 0.2s ease;
 }
 
 html.theme-changing .timeline::before,
@@ -1603,25 +1609,6 @@ html.easter-egg-dark-mode .timeline-subheader {
 	background-color: transparent;
 }
 
-html.system-dark-mode .experience-bubble[data-experience="northrop-grumman"] .experience-icon,
-html.system-dark-mode .experience-bubble[data-experience="usmc"] .experience-icon,
-html.system-dark-mode .experience-bubble[data-experience="umd"] .experience-icon,
-html.system-dark-mode .experience-bubble[data-experience="umgc"] .experience-icon,
-html.system-dark-mode .experience-bubble[data-experience="aacc"] .experience-icon,
-html.system-dark-mode .experience-bubble[data-experience="dau"] .experience-icon,
-html.system-dark-mode .experience-bubble[data-experience="pvm"] .experience-icon,
-html.system-dark-mode .experience-bubble[data-experience="securitas"] .experience-icon,
-html.easter-egg-dark-mode .experience-bubble[data-experience="northrop-grumman"] .experience-icon,
-html.easter-egg-dark-mode .experience-bubble[data-experience="usmc"] .experience-icon,
-html.easter-egg-dark-mode .experience-bubble[data-experience="umd"] .experience-icon,
-html.easter-egg-dark-mode .experience-bubble[data-experience="umgc"] .experience-icon,
-html.easter-egg-dark-mode .experience-bubble[data-experience="aacc"] .experience-icon,
-html.easter-egg-dark-mode .experience-bubble[data-experience="dau"] .experience-icon,
-html.easter-egg-dark-mode .experience-bubble[data-experience="pvm"] .experience-icon,
-html.easter-egg-dark-mode .experience-bubble[data-experience="securitas"] .experience-icon {
-	background-color: #fff;
-}
-
 .experience-popup-logo[src*="ng-logo"],
 .experience-popup-logo[src*="usmc-ega"],
 .experience-popup-logo[src*="umd-logo"],
@@ -1631,26 +1618,6 @@ html.easter-egg-dark-mode .experience-bubble[data-experience="securitas"] .exper
 .experience-popup-logo[src*="pvm-logo"],
 .experience-popup-logo[src*="securitas-logo"] {
 	background-color: transparent;
-}
-
-html.system-dark-mode .experience-popup-logo[src*="ng-logo"],
-html.system-dark-mode .experience-popup-logo[src*="usmc-ega"],
-html.system-dark-mode .experience-popup-logo[src*="umd-logo"],
-html.system-dark-mode .experience-popup-logo[src*="umgc-logo"],
-html.system-dark-mode .experience-popup-logo[src*="aacc-logo"],
-html.system-dark-mode .experience-popup-logo[src*="dau-logo"],
-html.system-dark-mode .experience-popup-logo[src*="pvm-logo"],
-html.system-dark-mode .experience-popup-logo[src*="securitas-logo"],
-html.easter-egg-dark-mode .experience-popup-logo[src*="ng-logo"],
-html.easter-egg-dark-mode .experience-popup-logo[src*="usmc-ega"],
-html.easter-egg-dark-mode .experience-popup-logo[src*="umd-logo"],
-html.easter-egg-dark-mode .experience-popup-logo[src*="umgc-logo"],
-html.easter-egg-dark-mode .experience-popup-logo[src*="aacc-logo"],
-html.easter-egg-dark-mode .experience-popup-logo[src*="dau-logo"],
-html.easter-egg-dark-mode .experience-popup-logo[src*="pvm-logo"],
-html.easter-egg-dark-mode .experience-popup-logo[src*="securitas-logo"] {
-	background-color: #fff;
-	border-radius: 10px;
 }
 
 .experience-bubble-even {
@@ -1758,6 +1725,13 @@ html.easter-egg-dark-mode .experience-popup-logo[src*="securitas-logo"] {
 .experience-label-icon[src*="au-logo"],
 .experience-popup-logo[src*="au-logo"] {
 	border-radius: 10px;
+}
+
+html.system-dark-mode .experience-label-icon[src*="au-logo"],
+html.system-dark-mode .experience-popup-logo[src*="au-logo"],
+html.easter-egg-dark-mode .experience-label-icon[src*="au-logo"],
+html.easter-egg-dark-mode .experience-popup-logo[src*="au-logo"] {
+	filter: brightness(0) invert(1);
 }
 
 /* Experience popup */
