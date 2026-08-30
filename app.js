@@ -2230,7 +2230,7 @@
         if (content.connect?.links) {
             content.connect.links.forEach((link) => {
                 const element = document.querySelector(`[data-connect="${link.id}"]`);
-                const label = element?.querySelector('span:not(.connect-icon-at)');
+                const label = element?.querySelector('span:not(.connect-icon)');
                 if (label) {
                     label.textContent = link.label;
                 }
@@ -2461,6 +2461,31 @@
         const emailForm = document.getElementById('emailForm');
         const emailFormStatus = document.getElementById('emailFormStatus');
         const emailSubmitBtn = document.getElementById('emailSubmitBtn');
+        const emailAttachments = document.getElementById('emailAttachments');
+        const emailAttachList = document.getElementById('emailAttachList');
+        const emailAttachPlaceholder = document.getElementById('emailAttachPlaceholder');
+        const DOCUMENT_EXTENSIONS = new Set([
+            'pdf', 'doc', 'docx', 'odt', 'rtf', 'txt', 'pages',
+            'ppt', 'pptx', 'odp', 'xls', 'xlsx', 'ods', 'csv'
+        ]);
+        const DOCUMENT_TYPES = new Set([
+            'application/pdf',
+            'application/msword',
+            'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+            'application/vnd.oasis.opendocument.text',
+            'application/rtf',
+            'text/rtf',
+            'text/plain',
+            'application/vnd.apple.pages',
+            'application/vnd.ms-powerpoint',
+            'application/vnd.openxmlformats-officedocument.presentationml.presentation',
+            'application/vnd.oasis.opendocument.presentation',
+            'application/vnd.ms-excel',
+            'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+            'application/vnd.oasis.opendocument.spreadsheet',
+            'text/csv'
+        ]);
+        const MAX_ATTACHMENT_BYTES = 10 * 1024 * 1024;
         if (!emailPopup || !emailBubble || emailPopup.dataset.initialized) {
             return;
         }
@@ -2480,10 +2505,76 @@
             emailFormStatus.classList.toggle('is-success', type === 'success');
         }
 
+        function getAttachmentFiles() {
+            return emailAttachments ? [...emailAttachments.files] : [];
+        }
+
+        function isDocumentFile(file) {
+            const extension = file.name.split('.').pop()?.toLowerCase() || '';
+            return DOCUMENT_EXTENSIONS.has(extension) || DOCUMENT_TYPES.has(file.type);
+        }
+
+        function setAttachmentFiles(files) {
+            if (!emailAttachments) {
+                return;
+            }
+
+            const transfer = new DataTransfer();
+            files.forEach((file) => transfer.items.add(file));
+            emailAttachments.files = transfer.files;
+            renderAttachmentList();
+        }
+
+        function renderAttachmentList() {
+            const files = getAttachmentFiles();
+
+            if (emailAttachPlaceholder) {
+                emailAttachPlaceholder.textContent = files.length
+                    ? `${files.length} file${files.length === 1 ? '' : 's'} selected`
+                    : 'No files selected';
+            }
+
+            if (!emailAttachList) {
+                return;
+            }
+
+            if (!files.length) {
+                emailAttachList.innerHTML = '';
+                emailAttachList.hidden = true;
+                return;
+            }
+
+            emailAttachList.hidden = false;
+            emailAttachList.innerHTML = files.map((file, index) => `
+                <li>
+                    <span class="email-attach-name">${escapeHtml(file.name)}</span>
+                    <button type="button" class="email-attach-remove" data-remove-attachment="${index}" aria-label="Remove ${escapeHtml(file.name)}">×</button>
+                </li>
+            `).join('');
+        }
+
+        function validateAttachments() {
+            const files = getAttachmentFiles();
+            const rejected = files.filter((file) => !isDocumentFile(file));
+
+            if (rejected.length) {
+                setAttachmentFiles(files.filter((file) => isDocumentFile(file)));
+                return 'Please attach documents only, such as PDF or Word files.';
+            }
+
+            const totalBytes = files.reduce((sum, file) => sum + file.size, 0);
+            if (totalBytes > MAX_ATTACHMENT_BYTES) {
+                return 'Attachments must be 10 MB or less in total.';
+            }
+
+            return '';
+        }
+
         function resetEmailForm() {
             if (emailForm) {
                 emailForm.reset();
             }
+            setAttachmentFiles([]);
             if (emailSubmitBtn) {
                 emailSubmitBtn.disabled = false;
                 emailSubmitBtn.textContent = 'Send Email';
@@ -2519,6 +2610,26 @@
             element.addEventListener('click', closeEmailPopup);
         });
 
+        emailAttachments?.addEventListener('change', () => {
+            const error = validateAttachments();
+            if (error) {
+                setFormStatus(error, 'error');
+                return;
+            }
+            setFormStatus('', null);
+            renderAttachmentList();
+        });
+
+        emailAttachList?.addEventListener('click', (event) => {
+            const removeBtn = event.target.closest('[data-remove-attachment]');
+            if (!removeBtn) {
+                return;
+            }
+
+            const index = Number(removeBtn.dataset.removeAttachment);
+            setAttachmentFiles(getAttachmentFiles().filter((_, fileIndex) => fileIndex !== index));
+        });
+
         if (emailForm) {
             emailForm.addEventListener('submit', async (event) => {
                 event.preventDefault();
@@ -2533,14 +2644,15 @@
                     return;
                 }
 
+                const attachmentError = validateAttachments();
+                if (attachmentError) {
+                    setFormStatus(attachmentError, 'error');
+                    return;
+                }
+
                 const formData = new FormData(emailForm);
-                const payload = {
-                    email: formData.get('email'),
-                    subject: formData.get('subject'),
-                    message: formData.get('message'),
-                    _subject: `Biography: ${formData.get('subject')}`,
-                    _template: 'table'
-                };
+                formData.set('_subject', `Biography: ${formData.get('subject') || ''}`);
+                formData.set('_template', 'table');
 
                 if (emailSubmitBtn) {
                     emailSubmitBtn.disabled = true;
@@ -2552,10 +2664,9 @@
                     const response = await fetch(submitEndpoint, {
                         method: 'POST',
                         headers: {
-                            'Content-Type': 'application/json',
                             Accept: 'application/json'
                         },
-                        body: JSON.stringify(payload)
+                        body: formData
                     });
 
                     const result = await response.json().catch(() => ({}));

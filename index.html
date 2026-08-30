@@ -228,6 +228,11 @@
                         <span></span>
                     </a>
 
+                    <a href="https://umd.joinhandshake.com/profiles/twsong" class="bubble connect-bubble" data-connect="handshake" target="_blank" rel="noopener noreferrer">
+                        <span class="connect-icon connect-handshake-icon" aria-hidden="true"></span>
+                        <span></span>
+                    </a>
+
                     <button type="button" class="bubble connect-bubble" id="emailBubble" data-connect="email" aria-haspopup="dialog" aria-controls="emailPopup">
                         <span class="connect-icon connect-icon-at" aria-hidden="true">@</span>
                         <span></span>
@@ -276,7 +281,7 @@
                 <h3 id="emailPopupTitle">Email</h3>
             </div>
             <div class="email-popup-body">
-                <form id="emailForm" class="email-compose-form" novalidate>
+                <form id="emailForm" class="email-compose-form" enctype="multipart/form-data" novalidate>
                     <label class="email-field">
                         <span class="email-field-label">Your email</span>
                         <input type="email" id="emailFrom" name="email" required autocomplete="email" placeholder="you@example.com">
@@ -289,6 +294,16 @@
                         <span class="email-field-label">Message</span>
                         <textarea id="emailMessage" name="message" required rows="5" placeholder="Write your message…"></textarea>
                     </label>
+                    <div class="email-field email-attach-field">
+                        <span class="email-field-label" id="emailAttachLabel">Attach files</span>
+                        <label class="email-attach-control">
+                            <input type="file" id="emailAttachments" name="attachment" multiple accept=".pdf,.doc,.docx,.odt,.rtf,.txt,.pages,.ppt,.pptx,.odp,.xls,.xlsx,.ods,.csv,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document,application/vnd.oasis.opendocument.text,application/rtf,text/rtf,text/plain,application/vnd.apple.pages,application/vnd.ms-powerpoint,application/vnd.openxmlformats-officedocument.presentationml.presentation,application/vnd.oasis.opendocument.presentation,application/vnd.ms-excel,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,application/vnd.oasis.opendocument.spreadsheet,text/csv">
+                            <span class="email-attach-button">Choose documents</span>
+                            <span class="email-attach-placeholder" id="emailAttachPlaceholder">No files selected</span>
+                        </label>
+                        <p class="email-attach-hint">PDF, Word, and other documents only. 10 MB total.</p>
+                        <ul class="email-attach-list" id="emailAttachList" hidden></ul>
+                    </div>
                     <input type="text" name="_honey" class="email-honey" tabindex="-1" autocomplete="off" aria-hidden="true">
                     <div class="email-form-actions">
                         <button type="submit" class="bubble email-send-btn" id="emailSubmitBtn">Send Email</button>
