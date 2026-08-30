@@ -1500,6 +1500,7 @@ html.easter-egg-dark-mode .timeline-subheader {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	gap: 32px;
 	max-width: 960px;
 	margin: 0 auto;
 	padding-bottom: 16px;
@@ -1535,18 +1536,66 @@ html.easter-egg-dark-mode .timeline-subheader {
 	width: 100%;
 }
 
-.experience-projects {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	gap: 16px;
+.experience-projects-items,
+.experience-publications-items {
 	width: 100%;
-	margin-top: 32px;
-	padding: 0 24px;
 }
 
-.experience-projects-items {
-	width: min(100%, 480px);
+.publication-bubble {
+	overflow: hidden;
+}
+
+.publication-marquee {
+	flex: 1;
+	min-width: 0;
+	overflow: hidden;
+}
+
+.publication-marquee-track {
+	display: inline-flex;
+	align-items: center;
+	white-space: nowrap;
+	will-change: transform;
+}
+
+.publication-marquee-copy {
+	flex-shrink: 0;
+}
+
+.publication-marquee-copy + .publication-marquee-copy {
+	padding-left: 2.5em;
+}
+
+.publication-marquee.is-scrolling .publication-marquee-track {
+	animation: publication-marquee-stream var(--scroll-duration, 18s) linear infinite;
+}
+
+@keyframes publication-marquee-stream {
+	from {
+		transform: translateX(0);
+	}
+
+	to {
+		transform: translateX(calc(-1 * var(--marquee-distance, 0px)));
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.publication-marquee.is-scrolling .publication-marquee-track {
+		animation: none;
+	}
+
+	.publication-marquee-copy + .publication-marquee-copy {
+		display: none;
+	}
+
+	.publication-marquee-copy {
+		display: block;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		max-width: 100%;
+	}
 }
 
 .experience-bubble {
@@ -2566,9 +2615,8 @@ button.email-send-btn:disabled {
 		padding: 0 16px;
 	}
 
-	.experience-projects {
-		margin-top: 24px;
-		padding: 0 16px;
+	.experience-main {
+		gap: 24px;
 	}
 
 	.connect-header {

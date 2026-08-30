@@ -1982,6 +1982,84 @@
         }).join('');
     }
 
+    function renderPublicationItems(items) {
+        return items.map((item) => {
+            const label = item.label || '';
+            return `
+            <button type="button" class="bubble experience-bubble publication-bubble" data-pdf="${escapeHtml(item.pdf || '')}" data-title="${escapeHtml(label)}" aria-haspopup="dialog" aria-controls="pdfPreview" aria-label="${escapeHtml(item.ariaLabel || label)}">
+                <span class="publication-marquee">
+                    <span class="publication-marquee-track">
+                        <span class="publication-marquee-copy">${escapeHtml(label)}</span>
+                        <span class="publication-marquee-copy" aria-hidden="true">${escapeHtml(label)}</span>
+                    </span>
+                </span>
+                ${renderExperienceStatusDot(item)}
+            </button>
+        `;
+        }).join('');
+    }
+
+    function renderPublicationsColumn(section) {
+        const headingEl = document.querySelector('[data-content="experience-publications-heading"]');
+        const itemsEl = document.querySelector('[data-content="experience-publications-items"]');
+
+        if (headingEl && section?.heading) {
+            headingEl.textContent = section.heading;
+        }
+
+        if (itemsEl && section?.items) {
+            itemsEl.innerHTML = renderPublicationItems(section.items);
+        }
+
+        initPublicationMarquees();
+    }
+
+    function updatePublicationMarquee(marquee) {
+        const track = marquee.querySelector('.publication-marquee-track');
+        const copies = marquee.querySelectorAll('.publication-marquee-copy');
+
+        marquee.classList.remove('is-scrolling');
+        marquee.style.removeProperty('--marquee-distance');
+        marquee.style.removeProperty('--scroll-duration');
+
+        if (!track || copies.length < 2 || prefersReducedMotion) {
+            return;
+        }
+
+        const copyWidth = copies[0].offsetWidth;
+        const gapWidth = parseFloat(getComputedStyle(copies[1]).paddingLeft) || 0;
+        const marqueeDistance = copyWidth + gapWidth;
+
+        if (marqueeDistance - marquee.clientWidth <= 2) {
+            return;
+        }
+
+        const duration = Math.max(12, marqueeDistance / 28);
+        marquee.style.setProperty('--marquee-distance', `${marqueeDistance}px`);
+        marquee.style.setProperty('--scroll-duration', `${duration}s`);
+        marquee.classList.add('is-scrolling');
+    }
+
+    function refreshPublicationMarquees() {
+        document.querySelectorAll('.publication-marquee').forEach(updatePublicationMarquee);
+    }
+
+    function initPublicationMarquees() {
+        refreshPublicationMarquees();
+
+        if (!initPublicationMarquees.bound) {
+            window.addEventListener('resize', refreshPublicationMarquees);
+            initPublicationMarquees.bound = true;
+        }
+
+        if ('ResizeObserver' in window && !initPublicationMarquees.observer) {
+            initPublicationMarquees.observer = new ResizeObserver(refreshPublicationMarquees);
+            document.querySelectorAll('.publication-marquee').forEach((marquee) => {
+                initPublicationMarquees.observer.observe(marquee);
+            });
+        }
+    }
+
     function renderExperienceColumn(headingEl, itemsEl, section) {
         if (headingEl && section?.heading) {
             headingEl.textContent = section.heading;
@@ -2140,6 +2218,8 @@
             content.experience?.projects
         );
         registerExperienceItems(content.experience?.projects, 'project');
+
+        renderPublicationsColumn(content.experience?.publications);
 
         renderSectionHeader(
             document.querySelector('[data-content="connect-header"]'),
@@ -2999,11 +3079,6 @@
                 return;
             }
 
-            if (isFileProtocol) {
-                window.open(new URL(src, window.location.href).href, '_blank', 'noopener,noreferrer');
-                return;
-            }
-
             activePreviewButton = button;
             pendingPreviewSrc = src;
             const bubbleRect = button.getBoundingClientRect();
@@ -3125,10 +3200,13 @@
         pdfPreviewEl = pdfPreview;
         closePdfPreviewFn = closePdfPreview;
 
-        document.querySelectorAll('.bubble-preview-btn').forEach((button) => {
-            button.addEventListener('click', () => {
-                openPdfPreview(button, button.dataset.pdf, button.dataset.title);
-            });
+        document.addEventListener('click', (event) => {
+            const button = event.target.closest('[data-pdf]');
+            if (!button?.dataset.pdf) {
+                return;
+            }
+
+            openPdfPreview(button, button.dataset.pdf, button.dataset.title);
         });
 
         document.querySelectorAll('[data-close-preview]').forEach((element) => {
@@ -3345,6 +3423,10 @@
         if (page === 'home') {
             initHomeFeatures();
             initHomeWelcomeWave();
+        }
+
+        if (page === 'experience') {
+            requestAnimationFrame(refreshPublicationMarquees);
         }
 
         syncEasterEggMusic(page);
