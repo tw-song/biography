@@ -5,7 +5,7 @@
     "dates": [
       "Created on April 21, 2025.",
       "Published on August 31, 2025.",
-      "Updated on August 30, 2026."
+      "Updated on October 18, 2026."
     ]
   },
   "home": {
@@ -560,27 +560,50 @@
       "items": [
         {
           "id": "melon-project",
-          "status": "in-progress",
+          "current": true,
           "label": "Melon",
+          "image": "misc/experience/melon-logo.png",
           "popup": {
             "organization": "Melon",
-            "duration": "TBD",
-            "status": "In Progress",
+            "duration": "March 2026 - Present",
+            "status": "Live",
             "body": [
-              "In progress."
+              "Melon is a personal finance app that runs in the browser. There is no account and no server. Numbers stay on the device, and every calculator updates as I type.",
+              "Calculators are grouped into Growth, Borrowing, Spending, Pay, Planning, Net worth, Currency, Scientific, and Tools. Growth covers compound interest and simple versus annualized return. Borrowing covers loans, car loans, car leases, credit cards, debt-to-income, mortgages, refinances, and rent. Spending covers sales tax and subscriptions. Pay estimates a wage, overtime, and tax. Planning solves a savings goal and a retirement nest egg. Net worth is assets minus debts. Currency converts with live rates. Scientific covers the usual functions. Tools is a four-function calculator.",
+              "A loan can be solved for a payment, a term, or how long a minimum payment takes. Car loans include tax, fees, a down payment, and a trade-in. Leases use the negotiated price, residual, and money factor. Credit cards can be paid avalanche, snowball, or minimum. Debt-to-income compares income with housing and other debts. Mortgages include principal, interest, tax, insurance, and HOA. Refinance compares the remaining loan with a new rate, term, and closing costs.",
+              "Calculators can share numbers after I change them, so debt-to-income and net worth can pick up a mortgage, rent, subscriptions, and other debts I have already entered. Saved stores up to 30 snapshots. From Saved I can export a category or a single row to PDF or Excel, with the inputs, result, schedule, and formula from that save."
             ],
             "toolsAndResources": {
               "language": [
-                "TBD"
+                "HTML",
+                "CSS",
+                "JavaScript"
               ],
               "tools": [
-                "TBD"
+                "SVG",
+                "Fetch API",
+                "Web Storage API",
+                "Intl",
+                "iframe",
+                "CSS Variables",
+                "ARIA",
+                "ES modules",
+                "Hash routing",
+                "Node.js",
+                "Python 3",
+                "macOS app bundle",
+                "Cursor",
+                "Version Control"
               ],
               "services": [
-                "TBD"
+                "Frankfurter",
+                "jsDelivr"
               ],
               "resources": [
-                "TBD"
+                "PDF",
+                "XLSX",
+                "JSON",
+                "localStorage"
               ]
             }
           }
@@ -589,6 +612,7 @@
           "id": "biography",
           "current": true,
           "label": "Biography",
+          "image": "misc/home/icon.svg",
           "popup": {
             "organization": "Biography",
             "duration": "April 2025 - Present",
@@ -598,7 +622,7 @@
               "The site uses hash-based routing to move between Home, About, Timeline, Experience, and Connect with animated page transitions. A responsive bubble-style layout, light and dark themes (with system preference support and saved theme choice), and SVG icons throughout keep the interface consistent across screen sizes. The brand menu shows created, published, and last-updated dates; a Node.js script and Cursor hooks keep the updated date in sync whenever site code changes.",
               "The Home page includes animated welcome text, live local date and time, weather from Open-Meteo using the Geolocation API (with a fallback location), and animated PDF previews for my resume and curriculum vitae. The About page organizes biography, passions, quotes, and interests into section bubbles. Timeline splits educational and professional history into dated events. The Connect page links to Instagram, Facebook, LinkedIn, and Handshake, and includes an email form powered by FormSubmit.io. Static assets are organized under misc/ for home media, navigation audio, experience logos, and easter-egg files.",
               "Experience is split into Professional Experience, Academic Experience, Projects, and Publications. Each entry opens a fullscreen-capable popup with labeled meta bubbles—professional entries show Location, Duration, Type, Title, optional Unit, and Website; academic entries show Location, Duration, Major, Minor, and Website; projects show Duration, Status, and Website. A Details section holds in-depth write-ups, Courses link to PlanetTerp with a scroll-triggered highlight, and Tools & Resources are grouped into Language, Tools, Services, and Resources. Honors & Credentials appear when configured, with optional clickable links for certificates and awards.",
-              "Project bubbles use status dots: green for current work, yellow for in-progress efforts such as Melon, and red for completed projects like Anaconda Database Project. Professional and academic popups include real role descriptions, tools used on the job, and credentials where applicable. A persistent music player in the navigation bar plays background audio with volume control, track links to YouTube, and play/pause state synced to the UI.",
+              "Project bubbles use status dots: green for current work such as Biography, Melon, and Anaconda Database Project, yellow for in-progress efforts, and red for completed projects. Professional and academic popups include real role descriptions, tools used on the job, and credentials where applicable. A persistent music player in the navigation bar plays background audio with volume control, track links to YouTube, and play/pause state synced to the UI.",
               "Per-page toast messages introduce each section on first visit, with optional notification sounds via the Web Audio API. Session and local storage track toast history, tab visits, theme preference, and easter egg progress. Hidden easter egg: visiting every main tab unlocks a secret page with Canvas 2D effects—sparks, fireflies, and fireworks—timed to a second audio track, plus a multi-stage GIF animation and gradual dark-mode transition. All images, audio, GIFs, PDFs, and external hyperlinks remain the property of their respective owners; all written content on the site is original."
             ],
             "toolsAndResources": {
@@ -653,6 +677,7 @@
         },
         {
           "id": "anaconda-database-project",
+          "current": true,
           "label": "Anaconda Database Project",
           "popup": {
             "organization": "Anaconda Database Project",

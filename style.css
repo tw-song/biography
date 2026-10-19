@@ -167,6 +167,7 @@ nav .menu-bar-brand.is-open {
 	width: 16px;
 	height: 16px;
 	flex-shrink: 0;
+	object-fit: contain;
 }
 
 nav .menu-bar-title {
@@ -1666,8 +1667,20 @@ html.easter-egg-dark-mode .timeline-subheader {
 .experience-bubble[data-experience="aacc"] .experience-icon,
 .experience-bubble[data-experience="dau"] .experience-icon,
 .experience-bubble[data-experience="pvm"] .experience-icon,
-.experience-bubble[data-experience="securitas"] .experience-icon {
+.experience-bubble[data-experience="securitas"] .experience-icon,
+.experience-bubble[data-experience="melon-project"] .experience-icon,
+.experience-bubble[data-experience="biography"] .experience-icon {
 	background-color: transparent;
+}
+
+.experience-bubble[data-experience="melon-project"] .experience-icon,
+.experience-bubble[data-experience="melon-project"] .experience-icon-img {
+	border-radius: 0;
+	overflow: visible;
+}
+
+.experience-popup-logo[src*="melon-logo"] {
+	border-radius: 0;
 }
 
 .experience-popup-logo[src*="ng-logo"],
@@ -1677,7 +1690,9 @@ html.easter-egg-dark-mode .timeline-subheader {
 .experience-popup-logo[src*="aacc-logo"],
 .experience-popup-logo[src*="dau-logo"],
 .experience-popup-logo[src*="pvm-logo"],
-.experience-popup-logo[src*="securitas-logo"] {
+.experience-popup-logo[src*="securitas-logo"],
+.experience-popup-logo[src*="melon-logo"],
+.experience-popup-logo[src*="home/icon"] {
 	background-color: transparent;
 }
 
