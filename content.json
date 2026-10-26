@@ -552,7 +552,7 @@
   },
   "repository": {
     "heading": "Repository",
-    "subtitle": "Code I keep, including this site and Melon.",
+    "subtitle": "A look at my repository.",
     "toast": {
       "title": "Messages",
       "message": "Open a card to go to the GitHub repository."
@@ -562,7 +562,7 @@
         "id": "melon-project",
         "status": "in-progress",
         "label": "Melon",
-        "description": "A personal finance app that runs in the browser.",
+        "description": "A personal finance app that runs in its own window. Mac only.",
         "language": [
           "HTML",
           "CSS",
