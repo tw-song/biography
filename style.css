@@ -1241,6 +1241,138 @@ footer p {
 	box-shadow: 0 1px 8px rgba(0, 0, 0, 0.08);
 }
 
+/* Repository */
+.repository-main {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 8px;
+	max-width: 720px;
+	margin: 0 auto;
+	padding-bottom: 16px;
+}
+
+.repository-list {
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+	width: 100%;
+	padding: 0 24px;
+}
+
+.repository-card {
+	display: flex;
+	flex-direction: column;
+	align-items: stretch;
+	gap: 10px;
+	width: 100%;
+	padding: 20px 24px;
+	color: inherit;
+	text-decoration: none;
+	background-color: var(--card-bg);
+	transition: background-color 0.12s ease, box-shadow 0.15s ease;
+}
+
+a.repository-card:hover,
+a.repository-card:focus-visible {
+	background-color: var(--surface-hover);
+	box-shadow:
+		0 4px 16px rgba(0, 0, 0, 0.1),
+		inset 0 0 0 2px rgba(0, 122, 255, 0.38);
+	outline: none;
+}
+
+.repository-card-top {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+}
+
+.repository-card-logo {
+	width: 28px;
+	height: 28px;
+	border-radius: 8px;
+	object-fit: cover;
+	flex-shrink: 0;
+}
+
+.repository-card[data-experience="melon-project"] .repository-card-logo {
+	border-radius: 0;
+}
+
+.repository-card h3 {
+	margin: 0;
+	font-size: 16px;
+	font-weight: 600;
+	color: var(--text-heading);
+}
+
+.repository-status {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	margin-left: auto;
+	flex-shrink: 0;
+	font-size: 12px;
+	font-weight: 500;
+	color: var(--text-muted);
+}
+
+.repository-status .experience-status-dot {
+	margin-left: 0;
+}
+
+.repository-status .experience-status-dot::after {
+	inset: -6px;
+}
+
+.repository-description {
+	margin: 0;
+	font-size: 15px;
+	line-height: 1.5;
+	color: var(--text-body);
+}
+
+.repository-card-meta {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 8px 12px;
+	margin-top: 4px;
+}
+
+.repository-langs {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+}
+
+.repository-lang {
+	display: inline-flex;
+	align-items: center;
+	padding: 4px 10px;
+	font-size: 12px;
+	font-weight: 500;
+	line-height: 1.3;
+	color: var(--text-body);
+	background: var(--surface-elevated-bg);
+	border-radius: 999px;
+}
+
+.repository-updated {
+	font-size: 12px;
+	font-weight: 500;
+	color: var(--text-muted);
+}
+
+.repository-open {
+	margin-left: auto;
+	font-size: 12px;
+	font-weight: 600;
+	color: var(--text-body);
+}
+
+
 /* Connect */
 .connect-main {
 	display: flex;
@@ -1736,7 +1868,11 @@ html.easter-egg-dark-mode .experience-bubble:focus-visible {
 }
 
 html.system-dark-mode .connect-bubble:hover,
-html.easter-egg-dark-mode .connect-bubble:hover {
+html.easter-egg-dark-mode .connect-bubble:hover,
+html.system-dark-mode a.repository-card:hover,
+html.system-dark-mode a.repository-card:focus-visible,
+html.easter-egg-dark-mode a.repository-card:hover,
+html.easter-egg-dark-mode a.repository-card:focus-visible {
 	background-color: var(--surface-hover);
 }
 
@@ -1949,16 +2085,24 @@ html.easter-egg-dark-mode .experience-column-heading {
 	animation: experience-status-breathe 2.4s ease-in-out infinite;
 }
 
-.experience-status-dot.is-current {
+.experience-status-dot.is-current,
+.experience-status-dot.is-live {
 	color: rgba(52, 199, 89, 0.75);
 	background-color: #34c759;
 	box-shadow: 0 0 6px 1px rgba(52, 199, 89, 0.55);
 }
 
-.experience-status-dot.is-in-progress {
+.experience-status-dot.is-in-progress,
+.experience-status-dot.is-progress {
 	color: rgba(255, 204, 0, 0.85);
 	background-color: #ffcc00;
 	box-shadow: 0 0 6px 1px rgba(255, 204, 0, 0.55);
+}
+
+.experience-status-dot.is-done {
+	color: rgba(255, 59, 48, 0.75);
+	background-color: #ff3b30;
+	box-shadow: 0 0 6px 1px rgba(255, 59, 48, 0.55);
 }
 
 .experience-status-dot::after {
@@ -2647,10 +2791,10 @@ button.email-send-btn:disabled {
 
 	nav {
 		display: grid;
-		grid-template-columns: repeat(4, 1fr);
+		grid-template-columns: repeat(5, 1fr);
 		grid-template-areas:
 			"brand brand brand brand player"
-			"home about experience connect";
+			"home about experience repository connect";
 		align-items: center;
 		gap: 6px 8px;
 		padding: 8px 12px;
@@ -2687,13 +2831,14 @@ button.email-send-btn:disabled {
 	nav a[href="#home"] { grid-area: home; }
 	nav a[href="#about"] { grid-area: about; }
 	nav a[href="#experience"] { grid-area: experience; }
+	nav a[href="#repository"] { grid-area: repository; }
 	nav a[href="#connect"] { grid-area: connect; }
 
 	nav.has-easter-egg {
-		grid-template-columns: repeat(5, 1fr);
+		grid-template-columns: repeat(6, 1fr);
 		grid-template-areas:
 			"brand brand brand brand player"
-			"home about experience connect easter";
+			"home about experience repository connect easter";
 	}
 
 	nav.has-easter-egg .nav-easter-egg {
@@ -2788,10 +2933,15 @@ button.email-send-btn:disabled {
 		max-width: none;
 	}
 
-	.connect-main {
+	.connect-main,
+	.repository-main {
 		max-width: none;
 		width: 100%;
 		padding: 0 0 16px;
+	}
+
+	.repository-list {
+		padding: 0 16px;
 	}
 
 	.experience-main {
@@ -2880,15 +3030,16 @@ button.email-send-btn:disabled {
 		grid-template-areas:
 			"brand brand brand brand"
 			"player player player player"
-			"home about experience connect";
+			"home about experience repository"
+			"connect connect connect connect";
 	}
 
 	nav.has-easter-egg {
 		grid-template-areas:
 			"brand brand brand brand"
 			"player player player player"
-			"home about experience connect"
-			"easter easter easter easter";
+			"home about experience repository"
+			"connect easter easter easter";
 	}
 
 	nav.has-easter-egg a[href="#easter-egg"] {

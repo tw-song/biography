@@ -1,5 +1,5 @@
 (async function () {
-    const BASE_PAGES = ['home', 'about', 'experience', 'connect'];
+    const BASE_PAGES = ['home', 'about', 'experience', 'repository', 'connect'];
     const EASTER_EGG_REQUIRED_PAGES = ['about', 'experience', 'connect'];
     const EASTER_EGG_PAGE = 'easter-egg';
     const TABS_VISITED_STORAGE_KEY = 'biography-tabs-visited';
@@ -1987,6 +1987,57 @@
         }
     }
 
+    function getRepositoryStatus(item) {
+        const raw = String(item.status || (item.current ? 'live' : '')).trim().toLowerCase();
+
+        if (raw === 'live' || raw === 'current' || item.current) {
+            return { label: item.statusLabel || 'Live', tone: 'live' };
+        }
+
+        if (raw === 'in-progress' || raw === 'in progress' || raw === 'progress') {
+            return { label: item.statusLabel || 'In-Progress', tone: 'progress' };
+        }
+
+        if (raw === 'done' || raw === 'complete' || raw === 'completed' || raw === 'past') {
+            const labels = { done: 'Done', complete: 'Complete', completed: 'Complete', past: 'Complete' };
+            return { label: item.statusLabel || labels[raw] || 'Complete', tone: 'done' };
+        }
+
+        return { label: item.statusLabel || item.status || 'Complete', tone: 'done' };
+    }
+
+    function renderRepositoryItems(items) {
+        return items.map((item) => {
+            const url = item.url?.trim() || '';
+            const status = getRepositoryStatus(item);
+            const languages = (item.language || [])
+                .map((language) => `<span class="repository-lang">${escapeHtml(language)}</span>`)
+                .join('');
+            const image = item.image
+                ? `<img class="repository-card-logo" src="${escapeHtml(item.image)}" alt="" width="28" height="28" loading="lazy" decoding="async">`
+                : '';
+
+            return `
+            <a href="${escapeHtml(url)}" class="bubble repository-card" data-experience="${escapeHtml(item.id)}" target="_blank" rel="noopener noreferrer">
+                <div class="repository-card-top">
+                    ${image}
+                    <h3>${escapeHtml(item.label || '')}</h3>
+                    <span class="repository-status">
+                        ${escapeHtml(status.label)}
+                        <span class="experience-status-dot is-${status.tone}" role="img" aria-label="${escapeHtml(status.label)}"></span>
+                    </span>
+                </div>
+                <p class="repository-description">${escapeHtml(item.description || '')}</p>
+                <div class="repository-card-meta">
+                    <div class="repository-langs">${languages}</div>
+                    <span class="repository-updated">${item.updated ? `Updated ${escapeHtml(item.updated)}` : ''}</span>
+                    <span class="repository-open">Open</span>
+                </div>
+            </a>
+        `;
+        }).join('');
+    }
+
     function renderWaveSpans(text, startIndex = 0) {
         let index = startIndex;
         const html = [...text].map((char) => {
@@ -2118,6 +2169,16 @@
         );
         registerExperienceItems(content.experience?.projects, 'project');
 
+        renderSectionHeader(
+            document.querySelector('[data-content="repository-header"]'),
+            content.repository?.heading,
+            content.repository?.subtitle
+        );
+
+        const repositoryItems = document.querySelector('[data-content="repository-items"]');
+        if (repositoryItems && content.repository?.items) {
+            repositoryItems.innerHTML = renderRepositoryItems(content.repository.items);
+        }
         renderSectionHeader(
             document.querySelector('[data-content="connect-header"]'),
             content.connect?.heading,
@@ -3226,14 +3287,16 @@
         experiencePopupEl = experiencePopup;
         closeExperiencePopupFn = closeExperiencePopup;
 
-        experienceMain.addEventListener('click', (event) => {
-            const bubble = event.target.closest('.experience-bubble');
-            if (!bubble?.dataset.experience) {
+        function handleExperienceTrigger(event) {
+            const trigger = event.target.closest('[data-experience]');
+            if (!trigger?.dataset.experience || trigger.closest('#experiencePopup')) {
                 return;
             }
 
-            openExperiencePopup(bubble.dataset.experience);
-        });
+            openExperiencePopup(trigger.dataset.experience);
+        }
+
+        experienceMain.addEventListener('click', handleExperienceTrigger);
 
         document.querySelectorAll('[data-close-experience]').forEach((element) => {
             element.addEventListener('click', closeExperiencePopup);

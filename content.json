@@ -496,121 +496,6 @@
       "heading": "Projects",
       "items": [
         {
-          "id": "melon-project",
-          "current": false,
-          "status": "in-progress",
-          "label": "Melon",
-          "image": "misc/experience/melon-logo.png",
-          "popup": {
-            "organization": "Melon",
-            "duration": "March 2026 - Present",
-            "status": "In-Progress",
-            "body": [
-              "Melon is a personal finance app that runs in the browser. There is no account and no server. Numbers stay on the device, and every calculator updates as I type.",
-              "Calculators are grouped into Growth, Borrowing, Spending, Pay, Planning, Net worth, Currency, Scientific, and Tools. Growth covers compound interest and simple versus annualized return. Borrowing covers loans, car loans, car leases, credit cards, debt-to-income, mortgages, refinances, and rent. Spending covers sales tax and subscriptions. Pay estimates a wage, overtime, and tax. Planning solves a savings goal and a retirement nest egg. Net worth is assets minus debts. Currency converts with live rates. Scientific covers the usual functions. Tools is a four-function calculator.",
-              "A loan can be solved for a payment, a term, or how long a minimum payment takes. Car loans include tax, fees, a down payment, and a trade-in. Leases use the negotiated price, residual, and money factor. Credit cards can be paid avalanche, snowball, or minimum. Debt-to-income compares income with housing and other debts. Mortgages include principal, interest, tax, insurance, and HOA. Refinance compares the remaining loan with a new rate, term, and closing costs.",
-              "Calculators can share numbers after I change them, so debt-to-income and net worth can pick up a mortgage, rent, subscriptions, and other debts I have already entered. Saved stores up to 30 snapshots. From Saved I can export a category or a single row to PDF or Excel, with the inputs, result, schedule, and formula from that save."
-            ],
-            "toolsAndResources": {
-              "language": [
-                "HTML",
-                "CSS",
-                "JavaScript"
-              ],
-              "tools": [
-                "SVG",
-                "Fetch API",
-                "Web Storage API",
-                "Intl",
-                "iframe",
-                "CSS Variables",
-                "ARIA",
-                "ES modules",
-                "Hash routing",
-                "Node.js",
-                "Python 3",
-                "macOS app bundle",
-                "Cursor",
-                "Version Control"
-              ],
-              "services": [
-                "Frankfurter",
-                "jsDelivr"
-              ],
-              "resources": [
-                "PDF",
-                "XLSX",
-                "JSON",
-                "localStorage"
-              ]
-            }
-          }
-        },
-        {
-          "id": "biography",
-          "current": true,
-          "label": "Biography",
-          "image": "misc/home/icon.svg",
-          "popup": {
-            "organization": "Biography",
-            "duration": "April 2025 - Present",
-            "status": "Live",
-            "body": [
-              "Biography is a personal site that runs in the browser. There is no account. The tabs are Home, About, Experience, and Connect, and moving between them stays on the same page.",
-              "Home holds a welcome, a live clock, local weather, a photo slideshow I can pause or skip, and in-page previews of my resume and curriculum vitae. The same music plays in the top bar and on Home, with a timeline, replay, skip, volume, and a source link.",
-              "About is grouped into Biography, Passions, Biblical Quotes, Renowned Quotes, and Interests/Hobbies. Biography is a short account of who I am. Passions and interests are lists. Quotes sit next to the verse or the person they come from.",
-              "Experience is grouped into Professional Experience, Academic Experience, and Projects. Each entry opens a window with the place, the dates, and the work. Courses, tools, and honors show when they belong. Connect has Instagram, Facebook, LinkedIn, Handshake, and an email form that can attach documents. Light or dark stays as I move, and the player keeps the same track."
-            ],
-            "toolsAndResources": {
-              "language": [
-                "HTML",
-                "CSS",
-                "JavaScript",
-                "JSON",
-                "Bash"
-              ],
-              "tools": [
-                "Canvas 2D",
-                "Fetch API",
-                "HTML5 Audio",
-                "Web Audio API",
-                "Geolocation API",
-                "Web Storage API",
-                "Intersection Observer",
-                "History API",
-                "requestAnimationFrame",
-                "SVG",
-                "iframe",
-                "CSS Variables",
-                "ARIA",
-                "Node.js",
-                "Cursor",
-                "Cursor Hooks",
-                "VSCode",
-                "Version Control",
-                "Python PIL"
-              ],
-              "services": [
-                "FormSubmit.io",
-                "Open-Meteo",
-                "PlanetTerp",
-                "GitHub Pages"
-              ],
-              "resources": [
-                "GitHub",
-                "YouTube",
-                "Instagram",
-                "Facebook",
-                "LinkedIn",
-                "PDF",
-                "GIF",
-                "MP3",
-                "JPEG"
-              ]
-            }
-          }
-        },
-        {
           "id": "anaconda-database-project",
           "current": true,
           "label": "Anaconda Database Project",
@@ -664,6 +549,45 @@
         }
       ]
     }
+  },
+  "repository": {
+    "heading": "Repository",
+    "subtitle": "Code I keep, including this site and Melon.",
+    "toast": {
+      "title": "Messages",
+      "message": "Open a card to go to the GitHub repository."
+    },
+    "items": [
+      {
+        "id": "melon-project",
+        "status": "in-progress",
+        "label": "Melon",
+        "description": "A personal finance app that runs in the browser.",
+        "language": [
+          "HTML",
+          "CSS",
+          "JavaScript"
+        ],
+        "updated": "October 18, 2026",
+        "image": "misc/experience/melon-logo.png",
+        "url": "https://github.com/tw-song/melon"
+      },
+      {
+        "id": "biography",
+        "current": true,
+        "status": "live",
+        "label": "Biography",
+        "description": "The personal site you are on now.",
+        "language": [
+          "HTML",
+          "CSS",
+          "JavaScript"
+        ],
+        "updated": "October 25, 2026",
+        "image": "misc/home/icon.svg",
+        "url": "https://github.com/tw-song/biography"
+      }
+    ]
   },
   "connect": {
     "heading": "Connect",
