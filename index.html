@@ -57,32 +57,41 @@
         </div>
         <a href="#home" data-page="home" class="active">Home</a>
         <a href="#about" data-page="about">About</a>
-        <a href="#timeline" data-page="timeline">Timeline</a>
         <a href="#experience" data-page="experience">Experience</a>
         <a href="#connect" data-page="connect">Connect</a>
 
         <div class="music-player">
-            <span class="music-title" id="musicTitle">
+            <span class="music-title" id="musicTitle" data-music-title>
                 <span class="music-title-track">
                     <span class="music-title-copy">Porter Robinson - Lifelike (Official Audio)</span>
                     <span class="music-title-copy" aria-hidden="true">Porter Robinson - Lifelike (Official Audio)</span>
                 </span>
             </span>
-            <img src="misc/nav/audio-cover.jpg" alt="Porter Robinson - Lifelike cover" class="music-cover" width="24" height="24">
-            <a href="https://youtu.be/ijmUdI_c-fk?si=U2_dOmO92Yh82moR" class="music-link" target="_blank" rel="noopener noreferrer" aria-label="Open Porter Robinson - Lifelike (Official Audio) on YouTube">
+            <img src="misc/nav/audio-cover.jpg" alt="Porter Robinson - Lifelike cover" class="music-cover" data-music-cover width="24" height="24">
+            <button type="button" class="music-btn" data-music-replay aria-label="Replay">
+                <svg class="music-icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path fill="currentColor" d="M12 5V1L7 6l5 5V7c3.31 0 6 2.69 6 6s-2.69 6-6 6-6-2.69-6-6H4c0 4.42 3.58 8 8 8s8-3.58 8-8-3.58-8-8-8z"/>
+                </svg>
+            </button>
+            <button type="button" class="music-btn" id="playPause" data-music-play aria-label="Play music" aria-pressed="false">
+                <svg class="music-icon" id="playIcon" data-music-play-icon viewBox="0 0 24 24" aria-hidden="true">
+                    <path fill="currentColor" d="M8 5v14l11-7z"/>
+                </svg>
+                <svg class="music-icon hidden" id="pauseIcon" data-music-pause-icon viewBox="0 0 24 24" aria-hidden="true">
+                    <path fill="currentColor" d="M6 4h4v16H6V4zm8 0h4v16h-4V4z"/>
+                </svg>
+            </button>
+            <button type="button" class="music-btn" data-music-next aria-label="Next">
+                <svg class="music-icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path fill="currentColor" d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"/>
+                </svg>
+            </button>
+            <input type="range" id="volumeControl" class="volume-slider" data-music-volume min="0" max="1" step="0.01" value="0.1" aria-label="Volume">
+            <a href="https://youtu.be/ijmUdI_c-fk?si=U2_dOmO92Yh82moR" class="music-link" data-music-link target="_blank" rel="noopener noreferrer" aria-label="Open Porter Robinson - Lifelike (Official Audio) on YouTube">
                 <svg class="music-link-icon" viewBox="0 0 24 24" aria-hidden="true">
                     <path fill="currentColor" d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/>
                 </svg>
             </a>
-            <button type="button" class="music-btn" id="playPause" aria-label="Play music" aria-pressed="false">
-                <svg class="music-icon" id="playIcon" viewBox="0 0 24 24" aria-hidden="true">
-                    <path fill="currentColor" d="M8 5v14l11-7z"/>
-                </svg>
-                <svg class="music-icon hidden" id="pauseIcon" viewBox="0 0 24 24" aria-hidden="true">
-                    <path fill="currentColor" d="M6 4h4v16H6V4zm8 0h4v16h-4V4z"/>
-                </svg>
-            </button>
-            <input type="range" id="volumeControl" class="volume-slider" min="0" max="1" step="0.01" value="0.1" aria-label="Volume">
             <button type="button" class="music-theme-btn" id="musicThemeBtn" aria-label="Switch to dark mode">
                 <svg class="music-theme-icon-svg music-theme-icon-light" viewBox="0 0 24 24" aria-hidden="true">
                     <path fill="currentColor" d="M12 17.5a5.5 5.5 0 1 1 0-11 5.5 5.5 0 0 1 0 11Zm0-1.75a3.75 3.75 0 1 0 0-7.5 3.75 3.75 0 0 0 0 7.5ZM12 1.25a.75.75 0 0 1 .75.75v2.19a.75.75 0 0 1-1.5 0V2a.75.75 0 0 1 .75-.75Zm0 17.81a.75.75 0 0 1 .75.75V22a.75.75 0 0 1-1.5 0v-2.19a.75.75 0 0 1 .75-.75ZM4.05 4.05a.75.75 0 0 1 1.06 0l1.55 1.55a.75.75 0 1 1-1.06 1.06L4.05 5.11a.75.75 0 0 1 0-1.06Zm13.85 13.85a.75.75 0 0 1 1.06 0l1.55 1.55a.75.75 0 1 1-1.06 1.06l-1.55-1.55a.75.75 0 0 1 0-1.06ZM1.25 12a.75.75 0 0 1 .75-.75h2.19a.75.75 0 0 1 0 1.5H2a.75.75 0 0 1-.75-.75Zm17.81 0a.75.75 0 0 1 .75-.75H22a.75.75 0 0 1 0 1.5h-2.19a.75.75 0 0 1-.75-.75ZM5.6 18.4a.75.75 0 0 1 0-1.06l1.55-1.55a.75.75 0 1 1 1.06 1.06l-1.55 1.55a.75.75 0 0 1-1.06 0ZM17.45 6.55a.75.75 0 0 1 0-1.06l1.55-1.55a.75.75 0 1 1 1.06 1.06l-1.55 1.55a.75.75 0 0 1-1.06 0Z"/>
@@ -145,9 +154,69 @@
                             <p class="bubble-weather" id="local-weather">Loading weather…</p>
                         </div>
                     </div>
+                    <div class="bubble home-audio">
+                        <div class="home-audio-art-wrap">
+                            <img src="misc/nav/audio-cover.jpg" alt="Porter Robinson - Lifelike cover" class="home-audio-art" data-music-cover draggable="false">
+                        </div>
+                        <div class="home-audio-bar">
+                            <span class="music-title" data-music-title>
+                                <span class="music-title-track">
+                                    <span class="music-title-copy">Porter Robinson - Lifelike (Official Audio)</span>
+                                    <span class="music-title-copy" aria-hidden="true">Porter Robinson - Lifelike (Official Audio)</span>
+                                </span>
+                            </span>
+                            <div class="home-audio-timeline">
+                                <span class="home-audio-time" data-music-time-current>0:00</span>
+                                <input type="range" class="home-audio-seek" data-music-seek min="0" max="1000" value="0" step="1" aria-label="Audio timeline">
+                                <span class="home-audio-time" data-music-time-duration>0:00</span>
+                            </div>
+                            <div class="home-audio-controls">
+                                <button type="button" class="music-btn" data-music-replay aria-label="Replay">
+                                    <svg class="music-icon" viewBox="0 0 24 24" aria-hidden="true">
+                                        <path fill="currentColor" d="M12 5V1L7 6l5 5V7c3.31 0 6 2.69 6 6s-2.69 6-6 6-6-2.69-6-6H4c0 4.42 3.58 8 8 8s8-3.58 8-8-3.58-8-8-8z"/>
+                                    </svg>
+                                </button>
+                                <button type="button" class="music-btn" data-music-play aria-label="Play music" aria-pressed="false">
+                                    <svg class="music-icon" data-music-play-icon viewBox="0 0 24 24" aria-hidden="true">
+                                        <path fill="currentColor" d="M8 5v14l11-7z"/>
+                                    </svg>
+                                    <svg class="music-icon hidden" data-music-pause-icon viewBox="0 0 24 24" aria-hidden="true">
+                                        <path fill="currentColor" d="M6 4h4v16H6V4zm8 0h4v16h-4V4z"/>
+                                    </svg>
+                                </button>
+                                <button type="button" class="music-btn" data-music-next aria-label="Next">
+                                    <svg class="music-icon" viewBox="0 0 24 24" aria-hidden="true">
+                                        <path fill="currentColor" d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"/>
+                                    </svg>
+                                </button>
+                                <input type="range" class="volume-slider" data-music-volume min="0" max="1" step="0.01" value="0.1" aria-label="Volume">
+                                <a href="https://youtu.be/ijmUdI_c-fk?si=U2_dOmO92Yh82moR" class="music-link home-audio-source" data-music-link target="_blank" rel="noopener noreferrer" aria-label="Open Porter Robinson - Lifelike (Official Audio) on YouTube">
+                                    <svg class="music-link-icon" viewBox="0 0 24 24" aria-hidden="true">
+                                        <path fill="currentColor" d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="bubble bubble-image">
-                    <img src="misc/home/slide1.jpg" alt="" data-content="home-image">
+                    <div class="home-slideshow" data-content="home-slideshow" aria-live="off">
+                        <div class="home-slideshow-slides">
+                            <img src="misc/home/slide1.jpg" alt="" class="is-active" draggable="false">
+                        </div>
+                        <div class="home-slideshow-controls">
+                            <button type="button" class="home-slideshow-btn" data-slideshow-prev aria-label="Previous photo">&lt;</button>
+                            <button type="button" class="home-slideshow-btn home-slideshow-toggle" data-slideshow-toggle aria-label="Pause slideshow" aria-pressed="true">
+                                <svg class="home-slideshow-icon" data-slideshow-pause-icon viewBox="0 0 24 24" aria-hidden="true">
+                                    <path fill="currentColor" d="M6 4h4v16H6V4zm8 0h4v16h-4V4z"/>
+                                </svg>
+                                <svg class="home-slideshow-icon hidden" data-slideshow-play-icon viewBox="0 0 24 24" aria-hidden="true">
+                                    <path fill="currentColor" d="M8 5v14l11-7z"/>
+                                </svg>
+                            </button>
+                            <button type="button" class="home-slideshow-btn" data-slideshow-next aria-label="Next photo">&gt;</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -157,14 +226,6 @@
                 <div class="about-header" data-content="about-header"></div>
 
                 <div class="about-bubbles" data-content="about-bubbles"></div>
-            </div>
-        </section>
-
-        <section class="page-panel" data-page="timeline" aria-label="Timeline">
-            <div class="timeline-main">
-                <div class="timeline-header" data-content="timeline-header"></div>
-
-                <div class="timeline-sections" data-content="timeline-sections"></div>
             </div>
         </section>
 
@@ -184,15 +245,10 @@
                     </section>
                 </div>
 
-                <div class="experience-columns">
+                <div class="experience-columns experience-columns-projects">
                     <section class="experience-column" aria-labelledby="experience-projects-heading">
                         <h3 class="experience-column-heading" id="experience-projects-heading" data-content="experience-projects-heading"></h3>
                         <div class="experience-items experience-projects-items" data-content="experience-projects-items"></div>
-                    </section>
-
-                    <section class="experience-column" aria-labelledby="experience-publications-heading">
-                        <h3 class="experience-column-heading" id="experience-publications-heading" data-content="experience-publications-heading"></h3>
-                        <div class="experience-items experience-publications-items" data-content="experience-publications-items"></div>
                     </section>
                 </div>
             </div>
@@ -262,7 +318,8 @@
                 </div>
                 <h3 id="pdfPreviewTitle">Preview</h3>
             </div>
-            <iframe id="pdfPreviewFrame" class="pdf-preview-frame" title="PDF preview"></iframe>
+            <div id="pdfPreviewDocument" class="pdf-preview-document" hidden></div>
+            <iframe id="pdfPreviewFrame" class="pdf-preview-frame" title="PDF preview" hidden></iframe>
         </div>
     </div>
 
@@ -350,6 +407,10 @@
                     <p class="experience-popup-tags-heading">Title</p>
                     <p class="experience-popup-meta" id="experiencePopupTitle"></p>
                 </div>
+                <div class="bubble experience-popup-section experience-popup-meta-section" id="experiencePopupContractedSection" hidden>
+                    <p class="experience-popup-tags-heading">Contracted</p>
+                    <p class="experience-popup-meta" id="experiencePopupContracted"></p>
+                </div>
                 <div class="bubble experience-popup-section experience-popup-meta-section" id="experiencePopupUnitSection" hidden>
                     <p class="experience-popup-tags-heading">Unit</p>
                     <p class="experience-popup-meta" id="experiencePopupUnit"></p>
@@ -400,7 +461,7 @@
 
     <div class="page-toast-stack" id="pageToastStack" hidden role="status" aria-live="polite"></div>
 
-    <script src="audio.js"></script>
+    <script src="audio.js?v=time-countdown"></script>
     <script src="app.js"></script>
 </body>
 </html>

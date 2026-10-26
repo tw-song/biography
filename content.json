@@ -1,11 +1,11 @@
 {
-  "footer": "Biography © 2026 Tae Song. All written content is original. External audio, images, and linked media remain the property of their respective owners.",
+  "footer": "Biography © 2026 Tae Song. External audio, images, and linked media remain the property of their respective owners.",
   "site": {
     "title": "Tae's Biography",
     "dates": [
       "Created on April 21, 2025.",
       "Published on August 31, 2025.",
-      "Updated on October 18, 2026."
+      "Updated on October 25, 2026."
     ]
   },
   "home": {
@@ -14,7 +14,25 @@
       "You found my biography!",
       "Click the tabs above to learn more!"
     ],
-    "imageAlt": "slide1",
+    "slideshowInterval": 4000,
+    "images": [
+      {
+        "src": "misc/home/slide1.jpg",
+        "alt": "Tae with a friend"
+      },
+      {
+        "src": "misc/home/slide3.jpg",
+        "alt": "Tae at a restaurant"
+      },
+      {
+        "src": "misc/home/slide4.jpg",
+        "alt": "Tae with fellow Marines"
+      },
+      {
+        "src": "misc/home/slide5.jpg",
+        "alt": "Portrait of Tae"
+      }
+    ],
     "toast": {
       "title": "Messages",
       "message": "One of my favorite tracks is now playing. You can pause it by clicking on the pause icon on the top right. Also, there is a easter egg if you click on all the tabs!"
@@ -24,12 +42,20 @@
         "id": "resume",
         "label": "Resume",
         "pdf": "misc/home/resume.pdf",
+        "previewPages": [
+          "misc/home/resume-page-1.png",
+          "misc/home/resume-page-2.png"
+        ],
         "ariaLabel": "Preview Resume"
       },
       {
         "id": "cv",
         "label": "Curriculum Vitae",
-        "pdf": "misc/home/cv.pdf",
+        "pdf": "misc/home/Curriculum_Vitae.pdf",
+        "previewPages": [
+          "misc/home/cv-page-1.png",
+          "misc/home/cv-page-2.png"
+        ],
         "ariaLabel": "Preview Curriculum Vitae"
       }
     ]
@@ -106,82 +132,6 @@
       }
     ]
   },
-  "timeline": {
-    "heading": "Timeline",
-    "subtitle": "A look at key moments along the way.",
-    "toast": {
-      "title": "Messages",
-      "message": "Let's streamline my experiences into timelines."
-    },
-    "sections": [
-      {
-        "heading": "Educational History",
-        "events": [
-          {
-            "date": "2016",
-            "text": "Enrolled to Old Mill Senior High."
-          },
-          {
-            "date": "2020",
-            "text": "Graduated from Old Mill Senior High."
-          },
-          {
-            "date": "2022",
-            "text": "Enrolled to Anne Arundel Community College."
-          },
-          {
-            "date": "2023",
-            "text": "Transferred to the University of Maryland Global Campus. Enrolled to Defense Acquisition University."
-          },
-          {
-            "date": "2025",
-            "text": "Transferred to the University of Maryland, College Park."
-          },
-          {
-            "date": "Now",
-            "text": "Currently remain at the University of Maryland, College Park."
-          }
-        ]
-      },
-      {
-        "heading": "Professional History",
-        "events": [
-          {
-            "date": "2018",
-            "text": "Hired by Subway."
-          },
-          {
-            "date": "2019",
-            "text": "Resigned from Subway. Hired by Chipotle."
-          },
-          {
-            "date": "2020",
-            "text": "Resigned from Chipotle. Hired by Exchange (Temporary)."
-          },
-          {
-            "date": "2021",
-            "text": "Enlisted to the United States Marine Corps."
-          },
-          {
-            "date": "2023",
-            "text": "Hired by Securitas."
-          },
-          {
-            "date": "2024",
-            "text": "Resigned from Securitas. Skill Bridge at Pat V. Mack IT."
-          },
-          {
-            "date": "2025",
-            "text": "Honorably discharged from the United States Marine Corps. Ended Skill Bridge at Pat V. Mack IT. Hired by Allied Universal/Northrop Grumman."
-          },
-          {
-            "date": "Now",
-            "text": "Currently remain at Allied Universal/Northrop Grumman."
-          }
-        ]
-      }
-    ]
-  },
   "experience": {
     "heading": "Experience",
     "subtitle": "A look at my professional and academic experiences.",
@@ -193,30 +143,17 @@
       "heading": "Professional Experience",
       "items": [
         {
-          "id": "northrop-grumman",
+          "id": "allied-universal",
           "current": true,
-          "image": "misc/experience/ng-logo.png",
-          "labelParts": [
-            {
-              "text": "Northrop Grumman"
-            },
-            {
-              "image": "misc/experience/au-logo.png"
-            },
-            {
-              "text": "Allied Universal"
-            }
-          ],
+          "label": "Allied Universal",
+          "image": "misc/experience/au-logo.png",
           "popup": {
-            "organization": "Northrop Grumman / Allied Universal",
-            "logos": [
-              "misc/experience/ng-logo.png",
-              "misc/experience/au-logo.png"
-            ],
+            "organization": "Allied Universal",
             "location": "Annapolis Junction, MD",
             "duration": "January 2025 - Present",
             "type": "Part-Time",
             "title": "Security Professional",
+            "contracted": "Northrop Grumman",
             "website": "https://www.northropgrumman.com/",
             "body": [
               "As a part-time Security Professional with Northrop Grumman and Allied Universal, I help secure classified and sensitive areas including SCIFs and vaults. I monitor network traffic, register employees in and out using SIMS Client, and perform standard security guard duties such as access control, patrols, incident response, and documentation in accordance with post orders and site procedures."
@@ -560,13 +497,14 @@
       "items": [
         {
           "id": "melon-project",
-          "current": true,
+          "current": false,
+          "status": "in-progress",
           "label": "Melon",
           "image": "misc/experience/melon-logo.png",
           "popup": {
             "organization": "Melon",
             "duration": "March 2026 - Present",
-            "status": "Live",
+            "status": "In-Progress",
             "body": [
               "Melon is a personal finance app that runs in the browser. There is no account and no server. Numbers stay on the device, and every calculator updates as I type.",
               "Calculators are grouped into Growth, Borrowing, Spending, Pay, Planning, Net worth, Currency, Scientific, and Tools. Growth covers compound interest and simple versus annualized return. Borrowing covers loans, car loans, car leases, credit cards, debt-to-income, mortgages, refinances, and rent. Spending covers sales tax and subscriptions. Pay estimates a wage, overtime, and tax. Planning solves a savings goal and a retirement nest egg. Net worth is assets minus debts. Currency converts with live rates. Scientific covers the usual functions. Tools is a four-function calculator.",
@@ -618,11 +556,11 @@
             "duration": "April 2025 - Present",
             "status": "Live",
             "body": [
-              "This is the live site you are viewing now—a personal biography and portfolio built from scratch with HTML, CSS, and JavaScript, with Artificial Intelligence (AI) assistance during development. It presents my background, timeline, professional and academic experience, projects, and ways to connect, all driven by a single content.json file so text and structure can be updated without a backend.",
-              "The site uses hash-based routing to move between Home, About, Timeline, Experience, and Connect with animated page transitions. A responsive bubble-style layout, light and dark themes (with system preference support and saved theme choice), and SVG icons throughout keep the interface consistent across screen sizes. The brand menu shows created, published, and last-updated dates; a Node.js script and Cursor hooks keep the updated date in sync whenever site code changes.",
-              "The Home page includes animated welcome text, live local date and time, weather from Open-Meteo using the Geolocation API (with a fallback location), and animated PDF previews for my resume and curriculum vitae. The About page organizes biography, passions, quotes, and interests into section bubbles. Timeline splits educational and professional history into dated events. The Connect page links to Instagram, Facebook, LinkedIn, and Handshake, and includes an email form powered by FormSubmit.io. Static assets are organized under misc/ for home media, navigation audio, experience logos, and easter-egg files.",
-              "Experience is split into Professional Experience, Academic Experience, Projects, and Publications. Each entry opens a fullscreen-capable popup with labeled meta bubbles—professional entries show Location, Duration, Type, Title, optional Unit, and Website; academic entries show Location, Duration, Major, Minor, and Website; projects show Duration, Status, and Website. A Details section holds in-depth write-ups, Courses link to PlanetTerp with a scroll-triggered highlight, and Tools & Resources are grouped into Language, Tools, Services, and Resources. Honors & Credentials appear when configured, with optional clickable links for certificates and awards.",
-              "Project bubbles use status dots: green for current work such as Biography, Melon, and Anaconda Database Project, yellow for in-progress efforts, and red for completed projects. Professional and academic popups include real role descriptions, tools used on the job, and credentials where applicable. A persistent music player in the navigation bar plays background audio with volume control, track links to YouTube, and play/pause state synced to the UI.",
+              "This is the live site you are viewing now—a personal biography and portfolio built from scratch with HTML, CSS, and JavaScript, with Artificial Intelligence (AI) assistance during development. It presents my background, professional and academic experience, projects, and ways to connect, all driven by a single content.json file so text and structure can be updated without a backend.",
+              "The site uses hash-based routing to move between Home, About, Experience, and Connect with animated page transitions. A responsive bubble-style layout, light and dark themes (with system preference support and saved theme choice), and SVG icons throughout keep the interface consistent across screen sizes. The brand menu shows created, published, and last-updated dates; a Node.js script and Cursor hooks keep the updated date in sync whenever site code changes.",
+              "The Home page includes animated welcome text, live local date and time, weather from Open-Meteo using the Geolocation API (with a fallback location), and animated PDF previews for my resume and curriculum vitae. The About page organizes biography, passions, quotes, and interests into section bubbles. The Connect page links to Instagram, Facebook, LinkedIn, and Handshake, and includes an email form powered by FormSubmit.io. Static assets are organized under misc/ for home media, navigation audio, experience logos, and easter-egg files.",
+              "Experience is split into Professional Experience, Academic Experience, and Projects. Each entry opens a fullscreen-capable popup with labeled meta bubbles—professional entries show Location, Duration, Type, Title, optional Unit, optional Contracted, and Website; academic entries show Location, Duration, Major, Minor, and Website; projects show Duration, Status, and Website. A Details section holds in-depth write-ups, Courses link to PlanetTerp with a scroll-triggered highlight, and Tools & Resources are grouped into Language, Tools, Services, and Resources. Honors & Credentials appear when configured, with optional clickable links for certificates and awards.",
+              "Project bubbles use status dots: green for current work such as Biography and Anaconda Database Project, yellow for in-progress efforts such as Melon, and red for completed projects. Professional and academic popups include real role descriptions, tools used on the job, and credentials where applicable. A persistent music player in the navigation bar plays background audio with volume control, track links to YouTube, and play/pause state synced to the UI.",
               "Per-page toast messages introduce each section on first visit, with optional notification sounds via the Web Audio API. Session and local storage track toast history, tab visits, theme preference, and easter egg progress. Hidden easter egg: visiting every main tab unlocks a secret page with Canvas 2D effects—sparks, fireflies, and fireworks—timed to a second audio track, plus a multi-stage GIF animation and gradual dark-mode transition. All images, audio, GIFs, PDFs, and external hyperlinks remain the property of their respective owners; all written content on the site is original."
             ],
             "toolsAndResources": {
@@ -726,19 +664,6 @@
               }
             ]
           }
-        }
-      ]
-    },
-    "publications": {
-      "heading": "Publications",
-      "items": [
-        {
-          "id": "a-bit-of-introspection",
-          "status": "in-progress",
-          "label": "A Bit of Introspection: Do You Know or Are You Saying You Know?",
-          "pdf": "misc/publications/publication-1.pdf",
-          "document": "misc/publications/publication-1.docx",
-          "ariaLabel": "Preview A Bit of Introspection: Do You Know or Are You Saying You Know?"
         }
       ]
     }
