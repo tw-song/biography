@@ -3315,6 +3315,8 @@
         const pdfPreviewFrame = document.getElementById('pdfPreviewFrame');
         const pdfPreviewDocument = document.getElementById('pdfPreviewDocument');
         const pdfPreviewTitle = document.getElementById('pdfPreviewTitle');
+        const pdfPreviewDownload = document.getElementById('pdfPreviewDownload');
+        const pdfPreviewPrint = document.getElementById('pdfPreviewPrint');
         let activePreviewButton = null;
         let isPreviewAnimating = false;
 
@@ -3384,6 +3386,15 @@
             const bubbleRect = button.getBoundingClientRect();
 
             pdfPreviewTitle.textContent = title;
+            if (pdfPreviewDownload) {
+                const fileName = src.split('/').pop() || `${title.replace(/\s+/g, '_')}.pdf`;
+                pdfPreviewDownload.href = src;
+                pdfPreviewDownload.setAttribute('download', fileName);
+                pdfPreviewDownload.setAttribute('aria-label', `Download ${title}`);
+            }
+            if (pdfPreviewPrint) {
+                pdfPreviewPrint.setAttribute('aria-label', `Print ${title}`);
+            }
             pdfPreview.hidden = false;
             pdfPreview.classList.remove('is-closing', 'is-content-visible');
             pdfPreview.classList.add('is-open');
@@ -3510,6 +3521,54 @@
 
         document.querySelectorAll('[data-close-preview]').forEach((element) => {
             element.addEventListener('click', closePdfPreview);
+        });
+
+        function printCurrentPreview() {
+            const title = pdfPreviewTitle?.textContent || 'Document';
+            const pageSrcs = pdfPreviewDocument && !pdfPreviewDocument.hidden
+                ? [...pdfPreviewDocument.querySelectorAll('img')].map((image) => image.currentSrc || image.src).filter(Boolean)
+                : [];
+            const frame = document.createElement('iframe');
+            frame.setAttribute('aria-hidden', 'true');
+            frame.style.cssText = 'position:fixed;width:0;height:0;border:0;right:0;bottom:0';
+
+            const cleanup = () => {
+                frame.remove();
+            };
+
+            frame.addEventListener('load', () => {
+                try {
+                    frame.contentWindow?.focus();
+                    frame.contentWindow?.print();
+                } catch {
+                    if (pendingPreviewSrc) {
+                        window.open(pendingPreviewSrc, '_blank', 'noopener');
+                    }
+                }
+                window.setTimeout(cleanup, 1500);
+            });
+
+            if (pageSrcs.length) {
+                frame.srcdoc = `<!DOCTYPE html><html><head><title>${escapeHtml(title)}</title>
+                    <style>
+                        @page { margin: 0.4in; }
+                        html, body { margin: 0; background: #fff; }
+                        img { display: block; width: 100%; page-break-after: always; }
+                        img:last-child { page-break-after: auto; }
+                    </style>
+                </head><body>${pageSrcs.map((src) => `<img src="${escapeHtml(src)}" alt="">`).join('')}</body></html>`;
+            } else if (pendingPreviewSrc) {
+                frame.src = pendingPreviewSrc;
+            } else {
+                return;
+            }
+
+            document.body.appendChild(frame);
+        }
+
+        pdfPreviewPrint?.addEventListener('click', (event) => {
+            event.preventDefault();
+            printCurrentPreview();
         });
     }
 

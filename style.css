@@ -918,6 +918,38 @@ footer p {
 	color: var(--text-body);
 }
 
+.pdf-preview-actions {
+	position: absolute;
+	right: 16px;
+	z-index: 2;
+	display: flex;
+	align-items: center;
+	gap: 8px;
+}
+
+.pdf-preview-action {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding: 4px 10px;
+	border: none;
+	border-radius: 6px;
+	background: transparent;
+	font: inherit;
+	font-size: 12px;
+	font-weight: 600;
+	line-height: 1.2;
+	color: var(--text-body);
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.pdf-preview-action:hover,
+.pdf-preview-action:focus-visible {
+	background: var(--surface-hover);
+	outline: none;
+}
+
 .pdf-preview-frame,
 .pdf-preview-document {
 	flex: 1;
@@ -1370,6 +1402,12 @@ a.repository-card:focus-visible {
 	font-size: 12px;
 	font-weight: 600;
 	color: var(--text-body);
+	text-decoration: none;
+}
+
+a.repository-card:hover .repository-open,
+a.repository-card:focus-visible .repository-open {
+	text-decoration: underline;
 }
 
 
